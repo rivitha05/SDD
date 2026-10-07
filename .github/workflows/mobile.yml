@@ -1,5 +1,15 @@
 name: Android assessment demonstration
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/test/java/com/sdd/assessment/mobile/**'
+      - 'src/test/java/com/sdd/assessment/core/**'
+      - 'src/test/resources/features/mobile.feature'
+      - 'src/test/resources/config/default.properties'
+      - 'scripts/install-chromedriver.sh'
+      - 'pom.xml'
+      - '.github/workflows/mobile.yml'
   workflow_dispatch:
     inputs:
       suite:
@@ -26,7 +36,8 @@ jobs:
       - name: Install pinned Appium tooling
         run: |
           npm install --global appium@2.19.0
-          appium driver install uiautomator2@4.2.9
+          appium driver install uiautomator2@3.9.9
+          ./scripts/install-chromedriver.sh
       - name: Enable emulator acceleration
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -50,14 +61,14 @@ jobs:
               sleep 1
             done
             curl --fail --silent http://127.0.0.1:4723/status > /dev/null
-            ./mvnw -B -ntp -P${{ inputs.suite }} test
+            ./mvnw -B -ntp -P${{ inputs.suite || 'mobile' }} test
       - name: Generate Allure report
         if: always()
         run: ./mvnw -B -ntp allure:report
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: android-${{ inputs.suite }}-results
+          name: android-${{ inputs.suite || 'mobile' }}-results
           path: |
             target/
             target-appium.log
