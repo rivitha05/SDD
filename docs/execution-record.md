@@ -4,7 +4,7 @@ Validation date: 7 October 2026 (UTC). Host: Debian Linux x86_64, JDK 21 compili
 
 | Check | Observed result | Evidence / scope |
 |---|---|---|
-| Compile and local API contracts | 4 passed, 0 failed, 0 skipped | Wrapper and repeatable installation refresh ran the actual HTTP client/contract tests |
+| Compile and local API contracts | 4 passed, 0 failed, 0 skipped | Wrapper and repeatable installation refresh ran the actual HTTP client/contract tests; a fresh GitHub clone also passed all four |
 | Live Reqres API | 2 passed, 0 failed, 0 skipped | GET page 2 and dynamic POST, without an API key on the execution date |
 | Live jQuery UI Chromium | 7 passed, 0 failed, 0 skipped | Chromium 140.0.7339.16; all seven required widgets, screenshots and Allure results |
 | Normal Android | 6 distinct scenarios passed; 1 unresolved failure (MOB-03) | Full run: 5 passed / 2 failed; toast subsequently passed; WebView submission passed but reset-link bounds remain clipped |
@@ -54,3 +54,9 @@ A fresh ordinary checkout requires the prerequisites in README; this cloud addit
 Latest distinct Allure results: **19 passed, 2 failed deliberately, 1 broken/unresolved**, covering 22 distinct tests/scenarios (18 assessment scenarios and 4 additional local contract tests). Across mandatory assessment scenarios: 15 passed, 2 deliberate failures, 1 unresolved mobile failure. Counts represent latest distinct outcomes across the full run and targeted reruns, not a single all-passing mobile invocation. No scenario was disabled to improve the count.
 
 For text-trigger crashes, sendKeys can raise StaleElementReferenceException after the app exits in its synchronous text listener. The trigger catches only that exception and rethrows it if home is still active; the following home-title assertion remains enabled and fails. This allows the assignment's explicit fail-case assertion to execute, without converting the scenario to a pass. Both crash results include native source, screenshots and AndroidRuntime exception evidence.
+
+## Repository delivery and fresh checkout
+
+Source was pushed to https://github.com/rivitha05/SDD on branch main. A fresh clone from that remote into `/tmp/SDD-fresh-check` compiled all test sources and passed the four default contracts using the pinned wrapper and documented full-JDK prerequisites. The same source code was validated; the final follow-up updates only ignore rules and this execution note. The cloud proxy settings and installed toolchain were reused, so this proves checkout/build reproducibility with those prerequisites, not a blank operating-system installation or GitHub Actions success.
+
+The generated Allure report was inspected: 22 distinct results, 19 passed, 2 intentional failures, 1 unresolved broken mobile result, zero skipped/unknown. Raw diagnostic history is retained. A standalone HTML report and source/manual/evidence ZIPs are packaged separately.
