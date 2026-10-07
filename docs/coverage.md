@@ -1,0 +1,30 @@
+# Requirement coverage
+
+Feature tags are stable assessment IDs. All scenarios are implemented in Java. Execution status is recorded in [the execution record](execution-record.md); implementation alone is not a passed result.
+
+| Assessment ID | Required behavior | Assertions / evidence |
+|---|---|---|
+| MOB-01 | Launch, title, home elements | Exact configured title, home activity, eleven enabled controls, EN text |
+| MOB-02 | EN → No, no → home | Dialog dismissal plus complete home checks |
+| MOB-03 | Hello WebView, Mercedes, submit, here → Volvo | Title/activity, question, exact name/car result, reset question and default Volvo |
+| MOB-04 | Registration/defaults/details → home | Mr. Burns/Ruby defaults, field controls, all six submitted confirmation values, home |
+| MOB-05 | Progress → registration | Loader appears and disappears, registration defaults/controls |
+| MOB-06 | Toast | Exact message via notification-aware native XPath polling |
+| MOB-07 | Popup dismissal | Separate accessibility window, dismissal, popup gone and home |
+| MOB-08 | Exception button, verify home title (fail case) | Crash leaves home; genuine failing home-title assertion, screenshot/source/crash log |
+| MOB-09 | Type test, verify home title (fail case) | Same failure demonstration for text trigger |
+| WEB-01 | Droppable | Accepted target text and highlight class |
+| WEB-02 | Selectable 1,3,7 | Exact selected subset in DOM order |
+| WEB-03 | Pictured Controlgroup selections | Both horizontal/vertical car, transmission, insurance and count values; Book Now state |
+| WEB-04 | Datepicker current date | Current Asia/Dubai date, exact formatted field value |
+| WEB-05 | Resize | Real pointer drag; meaningful width and height increase |
+| WEB-06 | Sort ASC → DESC | Full original and complete reversed list; each pointer move result |
+| WEB-07 | Go Green | All three widget backgrounds equal rgb(64,250,8) |
+| API-01 | GET page 2, user 10 Byron | HTTP 200, page 2 and exact first_name |
+| API-02 | Dynamic chained POST | Fresh GET source, HTTP 201, echoed name/job, nonblank ID, schema, timestamp |
+
+The four extra local API contract checks exercise the actual client against a local HTTP server: successful chaining/schema, missing source user, blank job, and malformed response rejection. They support deterministic development but do not replace live endpoint checks.
+
+Manual deliverables cover three reproduced Spartoo findings with all ten requested report fields, screenshots, clean-session evidence, exploratory scope and risk-based coverage. The workbook distinguishes observations from unexecuted cases; it does not inflate test counts or claim native-device coverage.
+
+CI supplies a Chromium/Firefox matrix and separately triggered API/mobile/crash suites. Broader browser/device coverage, screen-reader certification, production performance/security testing and transactional flows were not executed; those require separate scope and suitable environments.

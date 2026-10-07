@@ -1,0 +1,20 @@
+[
+  {
+    "query": "Adidas",
+    "fieldValue": "Adidas",
+    "url": "https://www.spartoo.com/adidas.php#rst",
+    "resultHeading": null,
+    "h1": [
+      "adidas Originals, adidas Performance, adidas Sportswear "
+    ]
+  },
+  {
+    "query": "zzzzsddnonexistent987",
+    "fieldValue": "zzzzsddnonexistent987",
+    "url": "https://www.spartoo.com/recherche.php#rst",
+    "resultHeading": "RECHERCHE  : 243275 articles",
+    "h1": [
+      "Recherche "
+    ]
+  }
+]

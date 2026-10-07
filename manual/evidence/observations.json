@@ -1,0 +1,205 @@
+{
+  "browser": "140.0.7339.16",
+  "host": "Debian Linux x86_64",
+  "execution": "Desktop Chromium headless with a 390x844 CSS pixel viewport; no native mobile-device claim",
+  "observations": [
+    {
+      "id": "BUG-02",
+      "run": 1,
+      "consentVisible": true,
+      "focusSequence": [
+        {
+          "tag": "A",
+          "text": "Aller au contenu principal",
+          "id": "",
+          "insideConsent": false
+        },
+        {
+          "tag": "A",
+          "text": "Politique de protection des données",
+          "id": "",
+          "insideConsent": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tout refuser",
+          "id": "",
+          "insideConsent": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tout accepter et fermer",
+          "id": "",
+          "insideConsent": true
+        },
+        {
+          "tag": "A",
+          "text": "01 85 09 79 58lundi - vendredi : 9h - 22h | samedi - dimanche : 9h - 17h (prix d",
+          "id": "callNumber",
+          "insideConsent": false
+        }
+      ],
+      "url": "https://www.spartoo.com/",
+      "timestamp": "2026-10-07T17:20:49.842467+00:00"
+    },
+    {
+      "id": "BUG-03",
+      "run": 1,
+      "state": {
+        "scrollY": 0,
+        "url": "https://www.spartoo.com/#skip-link-anchor",
+        "focus": {
+          "tag": "A",
+          "text": "\n        \n  \t\t\t\n\t\t\t\n\t\t\n    ",
+          "id": ""
+        },
+        "targets": [
+          {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-10-07T17:20:50.911623+00:00"
+    },
+    {
+      "id": "BUG-01",
+      "run": 1,
+      "result": {
+        "url": "https://www.spartoo.com/recherche.php#rst",
+        "query": "zzzzsddnonexistent987",
+        "headings": [
+          "Recherche "
+        ],
+        "textTail": "les disponibles\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n327\n129,00 €      109,65 €\nTailles disponibles\n \nNew Balance\n327\n129,00 €      109,65 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n119,00 €      107,10 €\nTailles disponibles\n \nNew Balance\n530\n119,00 €      107,10 €\n-10%\n\nEnregistrer\n \nSemerdjian\nMaya\n135,00 €      121,50 €\nTailles disponibles\n \nSemerdjian\nMaya\n135,00 €      121,50 €\nORIGINE PORTUGAL\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Ox\n69,99 €      59,49 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Ox\n69,99 €      59,49 €\n-10%\n\nEnregistrer\n \nVans\nOld Skool V\n44,99 €      40,49 €\nTailles disponibles\n \nVans\nOld Skool V\n44,99 €      40,49 €\n-20%\n\nEnregistrer\nBONS PLANS\nVans\nUa Old Skool Platform\n94,99 €      75,99 €\nTailles disponibles\nBONS PLANS\nVans\nUa Old Skool Platform\n94,99 €      75,99 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n530\n129,00 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n530\n129,00 €\n-20%\n\nEnregistrer\n \nNew Balance\n327\n129,00 €      103,20 €\nTailles disponibles\n \nNew Balance\n327\n129,00 €      103,20 €\n-15%\n\nEnregistrer\n \nCrocs\nClassic\n54,99 €      46,74 €\nTailles disponibles\n \nCrocs\nClassic\n54,99 €      46,74 €\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\n-10%\n\nEnregistrer\n \nBIRKENSTOCK\nMadrid\n80,00 €      72,00 €\nTailles disponibles\n \nBIRKENSTOCK\nMadrid\n80,00 €      72,00 €\nORIGINE EUROPE\n-20%\n\nEnregistrer\n \nVans\nOld Skool\n84,99 €      67,99 €\nTailles disponibles\n \nVans\nOld Skool\n84,99 €      67,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n480\n99,99 €      84,99 €\nTailles disponibles\n \nNew Balance\n480\n99,99 €      84,99 €\n-10%\n\nEnregistrer\n \nNew Balance\n327\n119,00 €      107,10 €\nTailles disponibles\n \nNew Balance\n327\n119,00 €      107,10 €\n\nEnregistrer\nNOUVEAUTÉS\nadidas\nGrand Court 3.0 El C\n37,99 €\nTailles disponibles\nNOUVEAUTÉS\nadidas\nGrand Court 3.0 El C\n37,99 €\n-10%\n\nEnregistrer\n \nBIRKENSTOCK\nArizona\n90,00 €      81,00 €\nTailles disponibles\n \nBIRKENSTOCK\nArizona\n90,00 €      81,00 €\nORIGINE EUROPE\n-20%\n\nEnregistrer\n \nDr. Martens\n1460 Gaucho Crazy Horse\n199,00 €      159,20 €\nTailles disponibles\n \nDr. Martens\n1460 Gaucho Crazy Horse\n199,00 €      159,20 €\nÉCORESPONSABLE\n-10%\n\nEnregistrer\n \nTimberland\n6 Inch Boot Premium\n230,00 €      207,00 €\nTailles disponibles\n \nTimberland\n6 Inch Boot Premium\n230,00 €      207,00 €\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0 Cf I\n39,99 €      35,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0 Cf I\n39,99 €      35,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n-15%\n\nEnregistrer\n \nVictoria\nTiempo Efecto Piel & Fan\n58,99 €      50,14 €\nTailles disponibles\n \nVictoria\nTiempo Efecto Piel & Fan\n58,99 €      50,14 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nPia\n85,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nPia\n85,00 €\n-15%\n\nEnregistrer\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\nTailles disponibles\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\n-10%\n\nEnregistrer\n \nOnly\nOnlbandit\n44,99 €      40,50 €\nTailles disponibles\n \nOnly\nOnlbandit\n44,99 €      40,50 €\n-15%\n\nEnregistrer\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\nTailles disponibles\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\n-30%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      52,49 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      52,49 €\n-15%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      59,49 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      59,49 €\n-10%\n\nEnregistrer\n \nAigle\nLolly Pop 2\n38,99 €      35,09 €\nTailles disponibles\n \nAigle\nLolly Pop 2\n38,99 €      35,09 €\n-20%\n\nEnregistrer\n \nDVS\nComanche\n99,99 €      79,99 €\nTailles disponibles\n \nDVS\nComanche\n99,99 €      79,99 €\n-15%\n\nEnregistrer\n \nLes Tropeziennes par M.Belarbi\nDamia\n55,00 €      46,75 €\nTailles disponibles\n \nLes Tropeziennes par M.Belarbi\nDamia\n55,00 €      46,75 €\n-30%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star..\n69,99 €      48,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star..\n69,99 €      48,99 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n530\n119,00 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n530\n119,00 €\n-15%\n\nEnregistrer\nBONS PLANS\nVans\nUa Classic Slip-on\n89,99 €      76,50 €\nTailles disponibles\nBONS PLANS\nVans\nUa Classic Slip-on\n89,99 €      76,50 €\n-10%\n\nEnregistrer\n \nVans\nOld Skool V\n54,99 €      49,49 €\nTailles disponibles\n \nVans\nOld Skool V\n54,99 €      49,49 €\n\nEnregistrer\n \nUGG\nKids' Classic Ultra Mini..\n134,95 €\nTailles disponibles\n \nUGG\nKids' Classic Ultra Mini..\n134,95 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n327\n129,00 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n327\n129,00 €\n-25%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      52,49 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      52,49 €\n-10%\n\nEnregistrer\n \nALOHAS\nTb.490\n169,00 €      152,10 €\nTailles disponibles\n \nALOHAS\nTb.490\n169,00 €      152,10 €\nÉCORESPONSABLE\n-15%\n\nEnregistrer\nBONS PLANS\nVictoria\nTennis 1915 Inglesa Toile\n38,99 €      33,14 €\nTailles disponibles\nBONS PLANS\nVictoria\nTennis 1915 Inglesa Toile\n38,99 €      33,14 €\nORIGINE ESPAGNE\nÉCORESPONSABLE\n-15%\n\nEnregistrer\n \nBIRKENSTOCK\nArizona\n100,00 €      85,00 €\nTailles disponibles\n \nBIRKENSTOCK\nArizona\n100,00 €      85,00 €\nORIGINE EUROPE\n-30%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Lift..\n89,99 €      62,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Lift..\n89,99 €      62,99 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n129,00 €      116,10 €\nTailles disponibles\n \nNew Balance\n530\n129,00 €      116,10 €\n-10%\n\nEnregistrer\n \nLes Petites Bombes\nJelina\n39,95 €      35,96 €\nTailles disponibles\n \nLes Petites Bombes\nJelina\n39,95 €      35,96 €\n-10%\n\nEnregistrer\n \nGola\nViper Metallic\n109,00 €      98,10 €\nTailles disponibles\n \nGola\nViper Metallic\n109,00 €      98,10 €\nÉCORESPONSABLE\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nAby\n80,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nAby\n80,00 €\n-15%\n\nEnregistrer\n \nDr. Martens\n1460\n199,00 €      169,15 €\nTailles disponibles\n \nDr. Martens\n1460\n199,00 €      169,15 €\nÉCORESPONSABLE\n-15%\n\nEnregistrer\n \nNew Balance\n530\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n530\n119,00 €      101,15 €\n-20%\n\nEnregistrer\n \nVans\nOld Skool V\n44,99 €      35,99 €\nTailles disponibles\n \nVans\nOld Skool V\n44,99 €      35,99 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star..\n69,99 €      59,49 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star..\n69,99 €      59,49 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n\nEnregistrer\nNOUVEAUTÉS\nadidas\nLinear Crew Cushioned Socks 3..\n9,99 €\nTailles disponibles\nNOUVEAUTÉS\nadidas\nLinear Crew Cushioned Socks 3..\n9,99 €\n\nEnregistrer\n \nUGG\nLowmel\n169,95 €\nTailles disponibles\n \nUGG\nLowmel\n169,95 €\n-20%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Hi\n69,99 €      55,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Hi\n69,99 €      55,99 €\n-10%\n\nEnregistrer\n \nJosef Seibel\nMonaco 202 G\n64,95 €      58,46 €\nTailles disponibles\n \nJosef Seibel\nMonaco 202 G\n64,95 €      58,46 €\nÉCORESPONSABLE\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\n-10%\n\nEnregistrer\n \nadidas\nGrand Court 00s K\n49,99 €      44,99 €\nTailles disponibles\n \nadidas\nGrand Court 00s K\n49,99 €      44,99 €\n-10%\n\nEnregistrer\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\nTailles disponibles\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n-10%\n\nEnregistrer\n \nAsics\nGel-nyc\n149,00 €      134,10 €\nTailles disponibles\n \nAsics\nGel-nyc\n149,00 €      134,10 €\n-20%\n\nEnregistrer\n \nLes Tropeziennes par M.Belarbi\nHerilo\n60,00 €      48,00 €\nTailles disponibles\n \nLes Tropeziennes par M.Belarbi\nHerilo\n60,00 €      48,00 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\n-30%\n\nEnregistrer\nBONS PLANS\nVictoria\nHuellas Metal\n74,99 €      52,49 €\nTailles disponibles\nBONS PLANS\nVictoria\nHuellas Metal\n74,99 €      52,49 €\nORIGINE ESPAGNE\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\n-20%\n\nEnregistrer\n \nBIRKENSTOCK\nArizona Eva\n55,00 €      44,00 €\nTailles disponibles\n \nBIRKENSTOCK\nArizona Eva\n55,00 €      44,00 €\nORIGINE EUROPE\n\nEnregistrer\n \nUGG\nTazz II\n149,95 €\nTailles disponibles\n \nUGG\nTazz II\n149,95 €\n-25%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      56,24 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      56,24 €\n\nEnregistrer\nNOUVEAUTÉS\nadidas\nVl Court Bold\n79,99 €\nTailles disponibles\nNOUVEAUTÉS\nadidas\nVl Court Bold\n79,99 €\n-15%\n\nEnregistrer\n \nadidas\nGrand Court 00s K\n49,99 €      42,49 €\nTailles disponibles\n \nadidas\nGrand Court 00s K\n49,99 €      42,49 €\n-15%\n\nEnregistrer\n \nReebok Classic\nClassic Leather\n99,99 €      84,99 €\nTailles disponibles\n \nReebok Classic\nClassic Leather\n99,99 €      84,99 €\n\nEnregistrer\n \nUGG\nTasman II\n139,95 €\nTailles disponibles\n \nUGG\nTasman II\n139,95 €\n-15%\n\nEnregistrer\n \nSkechers\nSummits Slip-ins\n84,95 €      72,21 €\nTailles disponibles\n \nSkechers\nSummits Slip-ins\n84,95 €      72,21 €\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\n-10%\n\nEnregistrer\n \nAsics\nGel-1130\n99,99 €      89,99 €\nTailles disponibles\n \nAsics\nGel-1130\n99,99 €      89,99 €\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Leather..\n79,99 €      67,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Leather..\n79,99 €      67,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n373\n69,99 €      59,49 €\nTailles disponibles\n \nNew Balance\n373\n69,99 €      59,49 €\n-10%\n\nEnregistrer\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\nTailles disponibles\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\n-20%\n\nEnregistrer\n \nVictoria\nDeportivo Basket Piel\n74,99 €      59,99 €\nTailles disponibles\n \nVictoria\nDeportivo Basket Piel\n74,99 €      59,99 €\nORIGINE ESPAGNE\nÉCORESPONSABLE\n\nEnregistrer\n \nUGG\nLowmel\n169,95 €\nTailles disponibles\n \nUGG\nLowmel\n169,95 €\n\nEnregistrer\nNOUVEAUTÉS\nAsics\nGel-1130\n99,99 €\nTailles disponibles\nNOUVEAUTÉS\nAsics\nGel-1130\n99,99 €\n-15%\n\nEnregistrer\n \nBIRKENSTOCK\nMadrid\n90,00 €      76,50 €\nTailles disponibles\n \nBIRKENSTOCK\nMadrid\n90,00 €      76,50 €\nORIGINE EUROPE\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\n-25%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Leather..\n84,99 €      63,74 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Leather..\n84,99 €      63,74 €\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star..\n74,99 €      63,74 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star..\n74,99 €      63,74 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n119,00 €      107,10 €\nTailles disponibles\n \nNew Balance\n530\n119,00 €      107,10 €\n-20%\n\nEnregistrer\n \nadidas\nUrban Court\n49,99 €      39,99 €\nTailles disponibles\n \nadidas\nUrban Court\n49,99 €      39,99 €\nÉCORESPONSABLE\n-15%\n\nEnregistrer\n \nNew Balance\n327\n129,00 €      109,65 €\nTailles disponibles\n \nNew Balance\n327\n129,00 €      109,65 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\n-20%\n\nEnregistrer\n \nNew Balance\n480\n99,99 €      79,99 €\nTailles disponibles\n \nNew Balance\n480\n99,99 €      79,99 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n129,00 €      116,10 €\nTailles disponibles\n \nNew Balance\n530\n129,00 €      116,10 €\n\nEnregistrer\nNOUVEAUTÉS\nBlundstone\nClassic Chelsea Boot 585\n215,00 €\nTailles disponibles\nNOUVEAUTÉS\nBlundstone\nClassic Chelsea Boot 585\n215,00 €\nÉCORESPONSABLE\n\nEnregistrer\nNOUVEAUTÉS\nClarks\nWallabee Evo\n88,99 €\nTailles disponibles\nNOUVEAUTÉS\nClarks\nWallabee Evo\n88,99 €\n-15%\n\nEnregistrer\n \nDr. Martens\n101 Dark Brown Crazy Horse\n189,00 €      160,65 €\nTailles disponibles\n \nDr. Martens\n101 Dark Brown Crazy Horse\n189,00 €      160,65 €\nÉCORESPONSABLE\n-10%\n\nEnregistrer\n \nBIRKENSTOCK\nGizeh\n90,00 €      81,00 €\nTailles disponibles\n \nBIRKENSTOCK\nGizeh\n90,00 €      81,00 €\nORIGINE EUROPE\n-20%\n\nEnregistrer\n \nVans\nSk8-mid Reissue V\n49,99 €      39,99 €\nTailles disponibles\n \nVans\nSk8-mid Reissue V\n49,99 €      39,99 €\n-20%\n\nEnregistrer\nBONS PLANS\nNew Balance\n530\n119,00 €      95,20 €\nTailles disponibles\nBONS PLANS\nNew Balance\n530\n119,00 €      95,20 €\n-10%\n\nEnregistrer\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\nTailles disponibles\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\n-15%\n\nEnregistrer\n \nK-Way\nLe Vrai Petit Claude 4.0 100..\n109,00 €      92,65 €\nTailles disponibles\n \nK-Way\nLe Vrai Petit Claude 4.0 100..\n109,00 €      92,65 €\n-15%\n\nEnregistrer\n \nJOTT\nCloe\n180,00 €      153,00 €\nTailles disponibles\n \nJOTT\nCloe\n180,00 €      153,00 €\n-10%\n\nEnregistrer\n \nJOTT\nTom\n140,00 €      126,00 €\nTailles disponibles\n \nJOTT\nTom\n140,00 €      126,00 €\n\n\n123...1690  Suivant\n\nVotre aide nous est précieuse !\n\nAvant de changer de page, comment jugez-vous l'offre présentée sur celle-ci ?\n\n12345678910\n\n\n\n \nLIVRAISON GRATUITE *\nEN 4 JOURS GARANTIS\nRETOUR GRATUIT *\nSOUS 30 JOURS\nLA GARANTIE DU PRIX LE PLUS BAS\nBESOIN D'AIDE\nNewsletter\nRecevez une réduction de 10€ et tous nos bons plans en exclusivité.\nEn vous inscrivant vous bénéficierez de tous nos bons plans en exclusivité,\nMode femme\nMode homme\nJE M'INSCRIS\nVotre avis nous intéresse\nAidez nous à améliorer le site en répondant à notre enquête de satisfaction et recevez 10€\nJE PARTICIPE\nEt tentez de gagner 100€ en rejoignant notre panel JE TENTE MA CHANCE\nGagnez 10 euros\nPARRAINEZ VOS AMIS\n-20% pour les étudiants\nJE M'INSCRIS\nUnivers\nMarques\nSacs\nAccessoires\nNouveautes\nBons plans\nGrandes tailles\nTendances\nSélection partenaires\nAide\nContact\nF.A.Q.\nC.G.V\nMentions Légales\n*Conditions des offres en cours\nRéférencement et critères de classement\nPolitique de protection des données\nServices\nMarketplace\nRevendre des produits Spartoo\nAffiliation\nTOOBONE : logistique et transport\nSpartoo Boutica\nSpartoo\nQui est SPARTOO ?\nRejoignez-nous\nEspace Presse\nDigital Service Act\nNos engagements RSE\nTéléchargez l’application pour iOS et Android\nLes bons plans de nos partenaires\nOffrez des cartes cadeaux de 30€ à 150€\nSuivez-nous sur\nSITE INVESTISSEURS / INVESTOR WEBSITE\nNos marques\nALOHAS\nadidas\nAigle\nAirstep / A.S.98\nArt\nAsics\nBIRKENSTOCK\nBOSS\nBOTD\nBack 70\nBarbour\nBetty London\nBlundstone\nBuffalo\nCalvin Klein Jeans\nCamper\nCarlington\nCasual Attitude\nCaterpillar\nCetti\nCitrouille et Compagnie\nClarks\nColmar\nColumbia\nConverse\nCrime London\nCrocs\nDorking\nDr. Martens\nDream in Green\nEasy Peasy\nEl Naturalista\nFaguo\nFashion brands\nFericelli\nFluchos\nFly London\nFred Perry\nFreeman T.Porter\nGBB\nGabor\nGeox\nGiesswein\nGola\nGuess\nHOFF\nJB Martin\nJOTT\nJack & Jones\nJosef Seibel\nK-Way\nKickers\nLANCASTER\nLacoste\nLancel\nLauren Ralph Lauren\nLe Temps des Cerises\nLes Petites Bombes\nLes Tropeziennes par M.Be..\nLevi's\nLittle Mary\nMICHAEL Michael Kors\nMam'Zelle\nMelvin & Hamilton\nMephisto\nMizuno\nMjus\nMoony Mood\nMorgan\nMuratti\nMustang\nNat et Nin\nNaturino\nNeroGiardini\nNew Balance\nNike\nNo Name\nOnly\nPalladium\nPatagonia\nPavement\nPellet\nPhilippe Model\nPikolinos\nPolo Ralph Lauren\nPuma\nRed Wing\nRedskins\nReebok Classic\nRemonte\nRieker\nSaucony\nSchott\nSebago\nSemerdjian\nShoo Pom\nSkechers\nSo Size\nTBS\nTamaris\nThe Mercer Brand\nThe North Face\nTimberland\nTommy Hilfiger\nUGG\nVanessa Wu\nVans\nVeja\nVictoria\nYurban\nMobile | Classique\n  \n\n\n 4.60 / 5  Calculé sur   28003 avis Google\nPREMIUM DAYS",
+        "pageErrors": [],
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "timestamp": "2026-10-07T17:20:54.133162+00:00"
+    },
+    {
+      "id": "BUG-02",
+      "run": 2,
+      "consentVisible": true,
+      "focusSequence": [
+        {
+          "tag": "A",
+          "text": "Aller au contenu principal",
+          "id": "",
+          "insideConsent": false
+        },
+        {
+          "tag": "A",
+          "text": "Politique de protection des données",
+          "id": "",
+          "insideConsent": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tout refuser",
+          "id": "",
+          "insideConsent": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Tout accepter et fermer",
+          "id": "",
+          "insideConsent": true
+        },
+        {
+          "tag": "A",
+          "text": "01 85 09 79 58lundi - vendredi : 9h - 22h | samedi - dimanche : 9h - 17h (prix d",
+          "id": "callNumber",
+          "insideConsent": false
+        }
+      ],
+      "url": "https://www.spartoo.com/",
+      "timestamp": "2026-10-07T17:21:00.271690+00:00"
+    },
+    {
+      "id": "BUG-03",
+      "run": 2,
+      "state": {
+        "scrollY": 0,
+        "url": "https://www.spartoo.com/#skip-link-anchor",
+        "focus": {
+          "tag": "A",
+          "text": "\n        \n  \t\t\t\n\t\t\t\n\t\t\n    ",
+          "id": ""
+        },
+        "targets": [
+          {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-10-07T17:21:00.728864+00:00"
+    },
+    {
+      "id": "BUG-01",
+      "run": 2,
+      "result": {
+        "url": "https://www.spartoo.com/recherche.php#rst",
+        "query": "zzzzsddnonexistent987",
+        "headings": [
+          "Recherche "
+        ],
+        "textTail": "les disponibles\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n327\n129,00 €      109,65 €\nTailles disponibles\n \nNew Balance\n327\n129,00 €      109,65 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n119,00 €      107,10 €\nTailles disponibles\n \nNew Balance\n530\n119,00 €      107,10 €\n-10%\n\nEnregistrer\n \nSemerdjian\nMaya\n135,00 €      121,50 €\nTailles disponibles\n \nSemerdjian\nMaya\n135,00 €      121,50 €\nORIGINE PORTUGAL\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Ox\n69,99 €      59,49 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Ox\n69,99 €      59,49 €\n-10%\n\nEnregistrer\n \nVans\nOld Skool V\n44,99 €      40,49 €\nTailles disponibles\n \nVans\nOld Skool V\n44,99 €      40,49 €\n-20%\n\nEnregistrer\nBONS PLANS\nVans\nUa Old Skool Platform\n94,99 €      75,99 €\nTailles disponibles\nBONS PLANS\nVans\nUa Old Skool Platform\n94,99 €      75,99 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n530\n129,00 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n530\n129,00 €\n-20%\n\nEnregistrer\n \nNew Balance\n327\n129,00 €      103,20 €\nTailles disponibles\n \nNew Balance\n327\n129,00 €      103,20 €\n-15%\n\nEnregistrer\n \nCrocs\nClassic\n54,99 €      46,74 €\nTailles disponibles\n \nCrocs\nClassic\n54,99 €      46,74 €\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      62,99 €\n-10%\n\nEnregistrer\n \nBIRKENSTOCK\nMadrid\n80,00 €      72,00 €\nTailles disponibles\n \nBIRKENSTOCK\nMadrid\n80,00 €      72,00 €\nORIGINE EUROPE\n-20%\n\nEnregistrer\n \nVans\nOld Skool\n84,99 €      67,99 €\nTailles disponibles\n \nVans\nOld Skool\n84,99 €      67,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n480\n99,99 €      84,99 €\nTailles disponibles\n \nNew Balance\n480\n99,99 €      84,99 €\n-10%\n\nEnregistrer\n \nNew Balance\n327\n119,00 €      107,10 €\nTailles disponibles\n \nNew Balance\n327\n119,00 €      107,10 €\n\nEnregistrer\nNOUVEAUTÉS\nadidas\nGrand Court 3.0 El C\n37,99 €\nTailles disponibles\nNOUVEAUTÉS\nadidas\nGrand Court 3.0 El C\n37,99 €\n-10%\n\nEnregistrer\n \nBIRKENSTOCK\nArizona\n90,00 €      81,00 €\nTailles disponibles\n \nBIRKENSTOCK\nArizona\n90,00 €      81,00 €\nORIGINE EUROPE\n-20%\n\nEnregistrer\n \nDr. Martens\n1460 Gaucho Crazy Horse\n199,00 €      159,20 €\nTailles disponibles\n \nDr. Martens\n1460 Gaucho Crazy Horse\n199,00 €      159,20 €\nÉCORESPONSABLE\n-10%\n\nEnregistrer\n \nTimberland\n6 Inch Boot Premium\n230,00 €      207,00 €\nTailles disponibles\n \nTimberland\n6 Inch Boot Premium\n230,00 €      207,00 €\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0 Cf I\n39,99 €      35,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0 Cf I\n39,99 €      35,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n-15%\n\nEnregistrer\n \nVictoria\nTiempo Efecto Piel & Fan\n58,99 €      50,14 €\nTailles disponibles\n \nVictoria\nTiempo Efecto Piel & Fan\n58,99 €      50,14 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nPia\n85,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nPia\n85,00 €\n-15%\n\nEnregistrer\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\nTailles disponibles\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\n-10%\n\nEnregistrer\n \nOnly\nOnlbandit\n44,99 €      40,50 €\nTailles disponibles\n \nOnly\nOnlbandit\n44,99 €      40,50 €\n-15%\n\nEnregistrer\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\nTailles disponibles\n \nK-Way\nLe Vrai 4.0 Claude\n139,00 €      118,15 €\n-30%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      52,49 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      52,49 €\n-15%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      59,49 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      59,49 €\n-10%\n\nEnregistrer\n \nAigle\nLolly Pop 2\n38,99 €      35,09 €\nTailles disponibles\n \nAigle\nLolly Pop 2\n38,99 €      35,09 €\n-20%\n\nEnregistrer\n \nDVS\nComanche\n99,99 €      79,99 €\nTailles disponibles\n \nDVS\nComanche\n99,99 €      79,99 €\n-15%\n\nEnregistrer\n \nLes Tropeziennes par M.Belarbi\nDamia\n55,00 €      46,75 €\nTailles disponibles\n \nLes Tropeziennes par M.Belarbi\nDamia\n55,00 €      46,75 €\n-30%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star..\n69,99 €      48,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star..\n69,99 €      48,99 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n530\n119,00 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n530\n119,00 €\n-15%\n\nEnregistrer\nBONS PLANS\nVans\nUa Classic Slip-on\n89,99 €      76,50 €\nTailles disponibles\nBONS PLANS\nVans\nUa Classic Slip-on\n89,99 €      76,50 €\n-10%\n\nEnregistrer\n \nVans\nOld Skool V\n54,99 €      49,49 €\nTailles disponibles\n \nVans\nOld Skool V\n54,99 €      49,49 €\n\nEnregistrer\n \nUGG\nKids' Classic Ultra Mini..\n134,95 €\nTailles disponibles\n \nUGG\nKids' Classic Ultra Mini..\n134,95 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n327\n129,00 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n327\n129,00 €\n-25%\n\nEnregistrer\n \nadidas\nVl Court 3.0\n69,99 €      52,49 €\nTailles disponibles\n \nadidas\nVl Court 3.0\n69,99 €      52,49 €\n-10%\n\nEnregistrer\n \nALOHAS\nTb.490\n169,00 €      152,10 €\nTailles disponibles\n \nALOHAS\nTb.490\n169,00 €      152,10 €\nÉCORESPONSABLE\n-15%\n\nEnregistrer\nBONS PLANS\nVictoria\nTennis 1915 Inglesa Toile\n38,99 €      33,14 €\nTailles disponibles\nBONS PLANS\nVictoria\nTennis 1915 Inglesa Toile\n38,99 €      33,14 €\nORIGINE ESPAGNE\nÉCORESPONSABLE\n-15%\n\nEnregistrer\n \nBIRKENSTOCK\nArizona\n100,00 €      85,00 €\nTailles disponibles\n \nBIRKENSTOCK\nArizona\n100,00 €      85,00 €\nORIGINE EUROPE\n-30%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Lift..\n89,99 €      62,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Lift..\n89,99 €      62,99 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n129,00 €      116,10 €\nTailles disponibles\n \nNew Balance\n530\n129,00 €      116,10 €\n-10%\n\nEnregistrer\n \nLes Petites Bombes\nJelina\n39,95 €      35,96 €\nTailles disponibles\n \nLes Petites Bombes\nJelina\n39,95 €      35,96 €\n-10%\n\nEnregistrer\n \nGola\nViper Metallic\n109,00 €      98,10 €\nTailles disponibles\n \nGola\nViper Metallic\n109,00 €      98,10 €\nÉCORESPONSABLE\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nAby\n80,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nAby\n80,00 €\n-15%\n\nEnregistrer\n \nDr. Martens\n1460\n199,00 €      169,15 €\nTailles disponibles\n \nDr. Martens\n1460\n199,00 €      169,15 €\nÉCORESPONSABLE\n-15%\n\nEnregistrer\n \nNew Balance\n530\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n530\n119,00 €      101,15 €\n-20%\n\nEnregistrer\n \nVans\nOld Skool V\n44,99 €      35,99 €\nTailles disponibles\n \nVans\nOld Skool V\n44,99 €      35,99 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star..\n69,99 €      59,49 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star..\n69,99 €      59,49 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n\nEnregistrer\nNOUVEAUTÉS\nadidas\nLinear Crew Cushioned Socks 3..\n9,99 €\nTailles disponibles\nNOUVEAUTÉS\nadidas\nLinear Crew Cushioned Socks 3..\n9,99 €\n\nEnregistrer\n \nUGG\nLowmel\n169,95 €\nTailles disponibles\n \nUGG\nLowmel\n169,95 €\n-20%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Hi\n69,99 €      55,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Hi\n69,99 €      55,99 €\n-10%\n\nEnregistrer\n \nJosef Seibel\nMonaco 202 G\n64,95 €      58,46 €\nTailles disponibles\n \nJosef Seibel\nMonaco 202 G\n64,95 €      58,46 €\nÉCORESPONSABLE\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\n-10%\n\nEnregistrer\n \nadidas\nGrand Court 00s K\n49,99 €      44,99 €\nTailles disponibles\n \nadidas\nGrand Court 00s K\n49,99 €      44,99 €\n-10%\n\nEnregistrer\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\nTailles disponibles\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n574\n119,00 €      101,15 €\nTailles disponibles\n \nNew Balance\n574\n119,00 €      101,15 €\n-10%\n\nEnregistrer\n \nAsics\nGel-nyc\n149,00 €      134,10 €\nTailles disponibles\n \nAsics\nGel-nyc\n149,00 €      134,10 €\n-20%\n\nEnregistrer\n \nLes Tropeziennes par M.Belarbi\nHerilo\n60,00 €      48,00 €\nTailles disponibles\n \nLes Tropeziennes par M.Belarbi\nHerilo\n60,00 €      48,00 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n373\n69,99 €\n-30%\n\nEnregistrer\nBONS PLANS\nVictoria\nHuellas Metal\n74,99 €      52,49 €\nTailles disponibles\nBONS PLANS\nVictoria\nHuellas Metal\n74,99 €      52,49 €\nORIGINE ESPAGNE\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\n-20%\n\nEnregistrer\n \nBIRKENSTOCK\nArizona Eva\n55,00 €      44,00 €\nTailles disponibles\n \nBIRKENSTOCK\nArizona Eva\n55,00 €      44,00 €\nORIGINE EUROPE\n\nEnregistrer\n \nUGG\nTazz II\n149,95 €\nTailles disponibles\n \nUGG\nTazz II\n149,95 €\n-25%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      56,24 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Core Hi\n74,99 €      56,24 €\n\nEnregistrer\nNOUVEAUTÉS\nadidas\nVl Court Bold\n79,99 €\nTailles disponibles\nNOUVEAUTÉS\nadidas\nVl Court Bold\n79,99 €\n-15%\n\nEnregistrer\n \nadidas\nGrand Court 00s K\n49,99 €      42,49 €\nTailles disponibles\n \nadidas\nGrand Court 00s K\n49,99 €      42,49 €\n-15%\n\nEnregistrer\n \nReebok Classic\nClassic Leather\n99,99 €      84,99 €\nTailles disponibles\n \nReebok Classic\nClassic Leather\n99,99 €      84,99 €\n\nEnregistrer\n \nUGG\nTasman II\n139,95 €\nTailles disponibles\n \nUGG\nTasman II\n139,95 €\n-15%\n\nEnregistrer\n \nSkechers\nSummits Slip-ins\n84,95 €      72,21 €\nTailles disponibles\n \nSkechers\nSummits Slip-ins\n84,95 €      72,21 €\n\nEnregistrer\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\nTailles disponibles\nNOUVEAUTÉS\nVanessa Wu\nFlow Initials\n80,00 €\n-10%\n\nEnregistrer\n \nAsics\nGel-1130\n99,99 €      89,99 €\nTailles disponibles\n \nAsics\nGel-1130\n99,99 €      89,99 €\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Leather..\n79,99 €      67,99 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Leather..\n79,99 €      67,99 €\n-15%\n\nEnregistrer\n \nNew Balance\n373\n69,99 €      59,49 €\nTailles disponibles\n \nNew Balance\n373\n69,99 €      59,49 €\n-10%\n\nEnregistrer\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\nTailles disponibles\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\n-20%\n\nEnregistrer\n \nVictoria\nDeportivo Basket Piel\n74,99 €      59,99 €\nTailles disponibles\n \nVictoria\nDeportivo Basket Piel\n74,99 €      59,99 €\nORIGINE ESPAGNE\nÉCORESPONSABLE\n\nEnregistrer\n \nUGG\nLowmel\n169,95 €\nTailles disponibles\n \nUGG\nLowmel\n169,95 €\n\nEnregistrer\nNOUVEAUTÉS\nAsics\nGel-1130\n99,99 €\nTailles disponibles\nNOUVEAUTÉS\nAsics\nGel-1130\n99,99 €\n-15%\n\nEnregistrer\n \nBIRKENSTOCK\nMadrid\n90,00 €      76,50 €\nTailles disponibles\n \nBIRKENSTOCK\nMadrid\n90,00 €      76,50 €\nORIGINE EUROPE\n-10%\n\nEnregistrer\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\nTailles disponibles\n \nadidas\nVl Court 3.0 K\n49,99 €      44,99 €\n-25%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star Leather..\n84,99 €      63,74 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star Leather..\n84,99 €      63,74 €\n-15%\n\nEnregistrer\n \nConverse\nChuck Taylor All Star..\n74,99 €      63,74 €\nTailles disponibles\n \nConverse\nChuck Taylor All Star..\n74,99 €      63,74 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n119,00 €      107,10 €\nTailles disponibles\n \nNew Balance\n530\n119,00 €      107,10 €\n-20%\n\nEnregistrer\n \nadidas\nUrban Court\n49,99 €      39,99 €\nTailles disponibles\n \nadidas\nUrban Court\n49,99 €      39,99 €\nÉCORESPONSABLE\n-15%\n\nEnregistrer\n \nNew Balance\n327\n129,00 €      109,65 €\nTailles disponibles\n \nNew Balance\n327\n129,00 €      109,65 €\n\nEnregistrer\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\nTailles disponibles\nNOUVEAUTÉS\nNew Balance\n515\n64,99 €\n-20%\n\nEnregistrer\n \nNew Balance\n480\n99,99 €      79,99 €\nTailles disponibles\n \nNew Balance\n480\n99,99 €      79,99 €\n-10%\n\nEnregistrer\n \nNew Balance\n530\n129,00 €      116,10 €\nTailles disponibles\n \nNew Balance\n530\n129,00 €      116,10 €\n\nEnregistrer\nNOUVEAUTÉS\nBlundstone\nClassic Chelsea Boot 585\n215,00 €\nTailles disponibles\nNOUVEAUTÉS\nBlundstone\nClassic Chelsea Boot 585\n215,00 €\nÉCORESPONSABLE\n\nEnregistrer\nNOUVEAUTÉS\nClarks\nWallabee Evo\n88,99 €\nTailles disponibles\nNOUVEAUTÉS\nClarks\nWallabee Evo\n88,99 €\n-15%\n\nEnregistrer\n \nDr. Martens\n101 Dark Brown Crazy Horse\n189,00 €      160,65 €\nTailles disponibles\n \nDr. Martens\n101 Dark Brown Crazy Horse\n189,00 €      160,65 €\nÉCORESPONSABLE\n-10%\n\nEnregistrer\n \nBIRKENSTOCK\nGizeh\n90,00 €      81,00 €\nTailles disponibles\n \nBIRKENSTOCK\nGizeh\n90,00 €      81,00 €\nORIGINE EUROPE\n-20%\n\nEnregistrer\n \nVans\nSk8-mid Reissue V\n49,99 €      39,99 €\nTailles disponibles\n \nVans\nSk8-mid Reissue V\n49,99 €      39,99 €\n-20%\n\nEnregistrer\nBONS PLANS\nNew Balance\n530\n119,00 €      95,20 €\nTailles disponibles\nBONS PLANS\nNew Balance\n530\n119,00 €      95,20 €\n-10%\n\nEnregistrer\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\nTailles disponibles\n \nadidas\nBreaknet Sleek\n59,99 €      53,99 €\n-15%\n\nEnregistrer\n \nK-Way\nLe Vrai Petit Claude 4.0 100..\n109,00 €      92,65 €\nTailles disponibles\n \nK-Way\nLe Vrai Petit Claude 4.0 100..\n109,00 €      92,65 €\n-15%\n\nEnregistrer\n \nJOTT\nCloe\n180,00 €      153,00 €\nTailles disponibles\n \nJOTT\nCloe\n180,00 €      153,00 €\n-10%\n\nEnregistrer\n \nJOTT\nTom\n140,00 €      126,00 €\nTailles disponibles\n \nJOTT\nTom\n140,00 €      126,00 €\n\n\n123...1690  Suivant\n\nVotre aide nous est précieuse !\n\nAvant de changer de page, comment jugez-vous l'offre présentée sur celle-ci ?\n\n12345678910\n\n\n\n \nLIVRAISON GRATUITE *\nEN 4 JOURS GARANTIS\nRETOUR GRATUIT *\nSOUS 30 JOURS\nLA GARANTIE DU PRIX LE PLUS BAS\nBESOIN D'AIDE\nNewsletter\nRecevez une réduction de 10€ et tous nos bons plans en exclusivité.\nEn vous inscrivant vous bénéficierez de tous nos bons plans en exclusivité,\nMode femme\nMode homme\nJE M'INSCRIS\nVotre avis nous intéresse\nAidez nous à améliorer le site en répondant à notre enquête de satisfaction et recevez 10€\nJE PARTICIPE\nEt tentez de gagner 100€ en rejoignant notre panel JE TENTE MA CHANCE\nGagnez 10 euros\nPARRAINEZ VOS AMIS\n-20% pour les étudiants\nJE M'INSCRIS\nUnivers\nMarques\nSacs\nAccessoires\nNouveautes\nBons plans\nGrandes tailles\nTendances\nSélection partenaires\nAide\nContact\nF.A.Q.\nC.G.V\nMentions Légales\n*Conditions des offres en cours\nRéférencement et critères de classement\nPolitique de protection des données\nServices\nMarketplace\nRevendre des produits Spartoo\nAffiliation\nTOOBONE : logistique et transport\nSpartoo Boutica\nSpartoo\nQui est SPARTOO ?\nRejoignez-nous\nEspace Presse\nDigital Service Act\nNos engagements RSE\nTéléchargez l’application pour iOS et Android\nLes bons plans de nos partenaires\nOffrez des cartes cadeaux de 30€ à 150€\nSuivez-nous sur\nSITE INVESTISSEURS / INVESTOR WEBSITE\nNos marques\nALOHAS\nadidas\nAigle\nAirstep / A.S.98\nArt\nAsics\nBIRKENSTOCK\nBOSS\nBOTD\nBack 70\nBarbour\nBetty London\nBlundstone\nBuffalo\nCalvin Klein Jeans\nCamper\nCarlington\nCasual Attitude\nCaterpillar\nCetti\nCitrouille et Compagnie\nClarks\nColmar\nColumbia\nConverse\nCrime London\nCrocs\nDorking\nDr. Martens\nDream in Green\nEasy Peasy\nEl Naturalista\nFaguo\nFashion brands\nFericelli\nFluchos\nFly London\nFred Perry\nFreeman T.Porter\nGBB\nGabor\nGeox\nGiesswein\nGola\nGuess\nHOFF\nJB Martin\nJOTT\nJack & Jones\nJosef Seibel\nK-Way\nKickers\nLANCASTER\nLacoste\nLancel\nLauren Ralph Lauren\nLe Temps des Cerises\nLes Petites Bombes\nLes Tropeziennes par M.Be..\nLevi's\nLittle Mary\nMICHAEL Michael Kors\nMam'Zelle\nMelvin & Hamilton\nMephisto\nMizuno\nMjus\nMoony Mood\nMorgan\nMuratti\nMustang\nNat et Nin\nNaturino\nNeroGiardini\nNew Balance\nNike\nNo Name\nOnly\nPalladium\nPatagonia\nPavement\nPellet\nPhilippe Model\nPikolinos\nPolo Ralph Lauren\nPuma\nRed Wing\nRedskins\nReebok Classic\nRemonte\nRieker\nSaucony\nSchott\nSebago\nSemerdjian\nShoo Pom\nSkechers\nSo Size\nTBS\nTamaris\nThe Mercer Brand\nThe North Face\nTimberland\nTommy Hilfiger\nUGG\nVanessa Wu\nVans\nVeja\nVictoria\nYurban\nMobile | Classique\n  \n\n\n 4.60 / 5  Calculé sur   28003 avis Google\nPREMIUM DAYS",
+        "pageErrors": [],
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "timestamp": "2026-10-07T17:21:03.148794+00:00"
+    }
+  ]
+}

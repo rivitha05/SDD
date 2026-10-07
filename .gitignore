@@ -1,0 +1,9 @@
+target/
+.allure/
+.env
+.idea/
+.vscode/
+*.log
+*.iml
+node_modules/
+.DS_Store

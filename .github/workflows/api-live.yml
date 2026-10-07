@@ -1,0 +1,26 @@
+name: Live Reqres assessment
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    env:
+      REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - run: ./mvnw -B -ntp -Papi test
+      - name: Generate Allure report
+        if: always()
+        run: ./mvnw -B -ntp allure:report
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-api-results
+          path: target/
+          retention-days: 14
