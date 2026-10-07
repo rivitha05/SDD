@@ -1,6 +1,6 @@
 # Requirement coverage
 
-Feature tags are stable assessment IDs. All scenarios are implemented in Java. Execution status is recorded in [the execution record](execution-record.md); implementation alone is not a passed result.
+Feature tags are stable assessment IDs. All scenarios are implemented in Java. Execution status is recorded in [the execution record](execution-record.md); MOB-03 remains unresolved, and MOB-08/MOB-09 are deliberate failures.
 
 | Assessment ID | Required behavior | Assertions / evidence |
 |---|---|---|
@@ -25,6 +25,6 @@ Feature tags are stable assessment IDs. All scenarios are implemented in Java. E
 
 The four extra local API contract checks exercise the actual client against a local HTTP server: successful chaining/schema, missing source user, blank job, and malformed response rejection. They support deterministic development but do not replace live endpoint checks.
 
-Manual deliverables cover three reproduced Spartoo findings with all ten requested report fields, screenshots, clean-session evidence, exploratory scope and risk-based coverage. The workbook distinguishes observations from unexecuted cases; it does not inflate test counts or claim native-device coverage.
+Manual deliverables cover three reproduced Spartoo findings with all ten requested report fields, screenshots, clean-session evidence, exploratory scope and risk-based coverage. The workbook distinguishes observed checks from unexecuted cases. Execution used a responsive browser viewport.
 
 CI supplies a Chromium/Firefox matrix and separately triggered API/mobile/crash suites. Broader browser/device coverage, screen-reader certification, production performance/security testing and transactional flows were not executed; those require separate scope and suitable environments.

@@ -1,21 +1,24 @@
-# Manual assessment strategy
+# Manual testing scope
 
-Chosen application: Spartoo responsive website, https://www.spartoo.com/. This is explicitly permitted by the assessment. A responsive desktop browser session must be labelled as such; it is not an Android device demonstration.
+Application: Spartoo responsive website, https://www.spartoo.com/, as permitted by the assessment. Execution used desktop Chromium with a mobile-sized viewport. Browser, OS, viewport and timestamps are recorded in the workbook and [evidence notes](../manual/README.md).
 
-## Charter and constraints
-Explore product discovery, search, filtering, details, navigation and responsive interaction. Do not submit purchases, payments or financial transactions. Avoid account creation and sending contact messages. Use only synthetic search text; no personal data.
+## Exploratory scope
 
-Prioritize defects that prevent discovery or selection, break navigation, or make mobile controls inaccessible. Reproduce a candidate in a clean session before classifying it as a confirmed defect. Record exact URL, browser version, OS, viewport, timestamps, prerequisites and repeatability. Separate observations caused by blocked external resources, automation, anti-bot controls, cookie consent or uncertain requirements.
+The risk-based plan covers product discovery, search, filtering, product details, navigation and responsive interaction:
 
-## Coverage
-- Empty search, whitespace, meaningful query, nonexistent product query, punctuation and long query.
-- Filter apply/clear, multiple filters, zero-result state, browser back and preserved query state.
-- Product detail access, size/stock affordances, back navigation and product image controls.
-- Responsive navigation, cookie consent, orientation/viewport changes, readable controls and horizontal overflow.
-- Keyboard focus, accessible names, visible labels and modal dismissal where directly observable.
-- Language/region state and currency consistency; do not assume international delivery coverage.
+- Search: empty/whitespace queries, meaningful and unmatched queries, punctuation and long input.
+- Filters: apply/clear, combinations, zero-result states and browser-back behavior.
+- Product details: access, size/stock controls, images and return navigation.
+- Responsive interaction: navigation, consent, viewport changes, readable controls and overflow.
+- Keyboard access: focus order, labels, accessible names and modal behavior.
+- Regional state: language, region and currency consistency.
 
-## Defect quality gate
-A submitted defect needs a specific observable failure, reproducible steps, justified expected behavior and evidence showing actual behavior. Priority expresses business urgency; severity expresses functional impact. Cosmetic findings should not be inflated to major defects. Security or financial claims require evidence and are outside this task's transaction prohibition.
+These are planned coverage areas. The workbook identifies observed checks and unexecuted cases separately. Recorded findings cover unmatched-search feedback, consent-overlay focus and skip-link behavior; each was reproduced in two fresh browser contexts.
 
-If fewer than three defects are confirmed, mark the workbook incomplete and retain candidate observations separately. Never populate the required count with invented or unverified reports.
+## Evidence and classification
+
+Reports include prerequisites, steps, expected/actual behavior, priority, severity and screenshots. Priority reflects business urgency; severity reflects functional impact. Search fallback behavior is qualified as a usability finding because product intent is not documented. Keyboard findings are based on observed focus and navigation behavior.
+
+A valid search was used as a positive control. Blocked analytics and initial font-rendering issues were excluded from defect reports. Consent rejection was investigated and worked after its asynchronous request completed.
+
+Purchases, payments, financial transactions, account creation and contact-message submission were excluded. Search input was synthetic. The findings do not establish full screen-reader or legal compliance coverage.

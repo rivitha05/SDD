@@ -1,34 +1,84 @@
-# SDD SDET assessment
+# SDD — SDET assessment
 
-Java 17+ / Maven framework for the supplied Selendroid Android, jQuery UI web and Reqres API assignments. Appium, Playwright Java, REST Assured, TestNG, Cucumber and Allure are all used. Execution evidence and limitations are recorded separately; implementing a scenario is not evidence that it passed. **Current mobile limitation: MOB-03 submits and verifies values, but its reset-link interaction still fails in the cloud emulator. Resolve it before claiming a fully passing mobile demonstration.**
+Java automation for the supplied Selendroid Android application, jQuery UI demos and Reqres API, with a separate manual testing assessment of the Spartoo responsive website.
 
-## Quick start
+## Technology stack
 
-Use a full **JDK 17 or newer**, not only a JRE. Maven 3.9.11 is pinned by the checksum-verified wrapper.
+| Area | Tools |
+|---|---|
+| Language and build | Java 17+, Maven 3.9.11 wrapper |
+| Mobile | Appium Java Client 9.5.0, Appium 2.19.0, UiAutomator2 4.2.9 |
+| Web | Playwright Java 1.55.0 |
+| API | REST Assured 5.5.6, JSON schema validation |
+| Test execution | TestNG 7.11.0, Cucumber 7.27.2, PicoContainer |
+| Reporting | Allure, Cucumber HTML/JSON, Surefire |
+| CI | GitHub Actions |
 
-```bash
-./mvnw -B -ntp clean test
-./mvnw -B -ntp test-compile exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps chromium firefox"
-./mvnw -B -ntp -Pweb test
-./mvnw -B -ntp -Pweb test -Dweb.browser=firefox
-./mvnw -B -ntp -Papi test
-./mvnw -B -ntp allure:report
+## Project structure
+
+```text
+src/test/java/com/sdd/assessment/
+  core/       Configuration, scenario state and lifecycle/evidence hooks
+  mobile/     Android page objects and steps
+  web/        jQuery UI page object and steps
+  api/        HTTP client, API steps and local contract tests
+  runner/     TestNG Cucumber runner
+src/test/resources/
+  features/   Tagged mobile, web and API scenarios
+  config/     Default configuration
+  data/       Synthetic registration data
+  schemas/    API response schema
+apps/         Supplied APK and checksum
+manual/       Excel workbook and supporting evidence
+docs/         Coverage, execution results and framework notes
+.github/workflows/  Regression and on-demand workflows
 ```
 
-Windows: use `mvnw.cmd`. Linux `--with-deps` may require administrator access to install OS libraries; browsers without OS installation can be installed using `install chromium firefox`. The default `test` command runs four deterministic local API contract checks. **It does not run the assessment's live external scenarios.** Profiles select those explicitly.
+## Automation approach
 
-Reports: `target/cucumber.html`, `target/cucumber.json`, `target/surefire-reports/`, `target/allure-results/` and `target/site/allure-maven-plugin/`. `./mvnw allure:serve` opens the interactive report on a local development machine. Screenshots are captured after web/mobile scenarios; failed web scenarios also have Playwright traces in `target/evidence/`. View a trace with Playwright CLI `show-trace <file.zip>`.
+Page objects contain reusable page-level interactions and selectors. Cucumber features describe the scenarios, and tags map them to assessment IDs. Test data is maintained separately from test logic.
 
-Run profiles sequentially in a single checkout. Archive reports after each suite because Cucumber and TestNG runner filenames are reused. Allure creates unique result IDs but may include earlier runs until `clean` is used. A clean run gives a fresh report, and deletes previously generated local evidence.
+PicoContainer creates scenario-scoped state. Hooks manage browser/device sessions and capture evidence. API scenarios use independent clients; the POST case performs its own GET prerequisite rather than depending on another test's execution order.
 
-## Android
+Suites run sequentially within a checkout. Mobile uses one device, and Playwright objects stay on their owning thread. CI browser jobs run independently. Browser interactions use Playwright waits; Android uses explicit waits with zero implicit timeout and short polling for transient toast messages.
 
-Prerequisites: Node.js 22+, Android SDK command-line tools, platform tools, build tools 35.0.0, an Android API 28 emulator or compatible physical device, and Appium 2.19.0 with UiAutomator2 4.2.9. SDK tools and Java must be on PATH; set `ANDROID_HOME` to the SDK installation.
+## Test coverage
+
+| Suite | Coverage |
+|---|---|
+| Mobile | Nine scenarios: home screen, EN cancellation, WebView form/reset, registration, progress, toast, popup and two deliberate crashes |
+| Web | Seven scenarios: droppable, selection, both Controlgroup forms, current date, resize, descending sort and green widget backgrounds |
+| Live API | GET page 2/user 10 and a dynamically chained POST with status, values, ID and schema checks |
+| Local contracts | Four checks: successful chaining/schema, missing source user, blank job and malformed response |
+
+The [coverage matrix](docs/coverage.md) lists the assertions for each requirement. Local contract tests use a local HTTP server; live API tests call Reqres.
+
+## Setup and installation
+
+A full JDK 17 or newer is required. The checksum-verified Maven wrapper pins Maven 3.9.11. On Windows, use `mvnw.cmd`.
+
+```bash
+git clone https://github.com/rivitha05/SDD.git
+cd SDD
+./mvnw -B -ntp clean test
+./mvnw -B -ntp test-compile exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps chromium firefox"
+```
+
+The default test command runs the four local API contracts. Live scenarios are selected through Maven profiles. On Linux, `--with-deps` may require administrator access for OS libraries. If those libraries are already installed, use `install chromium firefox` instead.
+
+### Android setup
+
+Mobile tests require Node.js 22+, Android SDK command-line tools, platform tools, build tools 35.0.0 and an API 28 emulator or compatible physical device. Set `ANDROID_HOME` and add Java and SDK tools to `PATH`.
 
 ```bash
 sdkmanager "platform-tools" "build-tools;35.0.0" "platforms;android-28" "system-images;android-28;google_apis;x86_64"
 avdmanager create avd -n SDD_API28 -k "system-images;android-28;google_apis;x86_64" --device pixel
 emulator -avd SDD_API28 -no-snapshot
+```
+
+After the emulator boots, in another terminal:
+
+```bash
 adb devices
 adb shell getprop sys.boot_completed
 adb shell wm size reset
@@ -38,22 +88,13 @@ appium driver install uiautomator2@4.2.9
 appium --address 127.0.0.1
 ```
 
-Use the emulator's physical resolution and a 160 dpi density to avoid display overrides in this legacy APK. WebView taps use rendered accessibility bounds and native gestures; the popup enables multi-window accessibility, and toast polling temporarily disables Android's idle wait.
+The boot property should be `1` and Appium's `/status` endpoint should respond before starting tests. Validation used the emulator's physical resolution at 160 dpi.
 
-Once the device is online and boot property is `1`, verify the Appium `/status` response, then:
+The supplied APK is version `0.12.0-SNAPSHOT`, package `io.selendroid.testapp`, with launcher `io.selendroid.testapp.HomeScreenActivity`. Appium installs a runtime copy because installation may re-sign the APK. The original binary is retained unchanged.
 
-```bash
-./mvnw -B -ntp -Pmobile test
-./mvnw -B -ntp -Pcrash-demo test
-```
+### Configuration
 
-The crash demo deliberately asserts the assignment's home-screen expectation after each explicit app crash. **It should fail and return a nonzero exit code.** Keep its results separate from the seven normal mobile cases; a setup failure is not proof of the expected app crash. There is no catch-all exception-to-pass conversion.
-
-The supplied APK (`0.12.0-SNAPSHOT`, package `io.selendroid.testapp`) is kept unchanged. Appium receives an ignored runtime copy because it can re-sign APKs during installation. The original APK does not enable WebView debugging, so its exposed accessibility controls are used for the Hello form. Native waits, title/activity checks, defaults and submitted values are asserted. Synthetic registration data is in `src/test/resources/data/mobile-user.json`.
-
-## Configuration and secrets
-
-Defaults are in `src/test/resources/config/default.properties`. Precedence: JVM `-D` property, environment variable, defaults. Dotted/camelCase keys map to uppercase snake case: `web.baseUrl` → `WEB_BASE_URL`, `mobile.serverUrl` → `MOBILE_SERVER_URL`. Examples:
+Defaults are in `src/test/resources/config/default.properties`. Priority is JVM `-D` property, environment variable, then defaults. Keys map to uppercase snake case: `web.baseUrl` → `WEB_BASE_URL`, `mobile.serverUrl` → `MOBILE_SERVER_URL`.
 
 ```bash
 ./mvnw -Pweb test -Dweb.browser=firefox -Dweb.headless=false
@@ -61,35 +102,69 @@ Defaults are in `src/test/resources/config/default.properties`. Precedence: JVM 
 ./mvnw -Pmobile test -Dmobile.serverUrl=http://127.0.0.1:4723
 ```
 
-`web.timezone` defaults to `Asia/Dubai`; the browser and current-date assertion use the same timezone. Playwright handles browser waits; Appium uses explicit native waits, zero implicit timeout and short toast polling.
+`web.timezone` defaults to `Asia/Dubai`; the browser and current-date assertion use the same timezone. Mobile registration data is in `src/test/resources/data/mobile-user.json`.
 
-Reqres's legacy demo endpoints were accessible without a key during investigation. If your environment requires authentication, supply `REQRES_API_KEY` securely through the environment or GitHub Actions secrets. Never commit it. The API client sends the key only as an `x-api-key` header and does not log requests/headers. The assessment's POST example is illustrative: its name is derived from user 10's GET `first_name` (Byron), with configured job `BA`. Each POST scenario gets its own fresh prerequisite response.
+Reqres accepts an optional `REQRES_API_KEY`, sent as `x-api-key`. Live validation did not require a key on the execution date. The POST name comes from user 10's GET `first_name` (Byron); the configured job is `BA`.
 
-The framework honors an existing `HTTPS_PROXY` for public HTTPS requests and browser traffic. Cloud proxy CAs must be trusted by Java and the selected browser using supported trust configuration. Do not use relaxed REST Assured HTTPS validation or browser certificate-error bypasses. Proxy hosts and secrets must not be hard-coded into the repository.
+Public HTTPS requests and browser traffic support `HTTPS_PROXY`. Proxy certificates must be trusted by Java and the browser; TLS verification remains enabled. Credentials are supplied through environment variables or CI secrets and are excluded from request logging.
 
-## Structure and design
+## Running tests and available commands
 
-- `core`: configuration, per-scenario World, lifecycle/evidence hooks.
-- `web`: jQuery UI page object with explicit demo iframe boundaries and web steps.
-- `mobile`: home, registration and accessibility WebView page objects; immutable synthetic data.
-- `api`: instance-scoped HTTP specification, chaining logic and contract/live checks.
-- `runner`: TestNG Cucumber runner. Feature tags map directly to assessment IDs.
-- `src/test/resources`: features, defaults, synthetic data and response schema.
-- `.github/workflows`: contract/web regression; separately triggered live API and Android demonstrations.
-- `docs`: assessment analysis, manual strategy, execution record, coverage and interview preparation.
+| Command | Purpose |
+|---|---|
+| `./mvnw -B -ntp clean test` | Compile and run local API contracts |
+| `./mvnw -B -ntp -Pweb test` | Run web scenarios in Chromium |
+| `./mvnw -B -ntp -Pweb test -Dweb.browser=firefox` | Run web scenarios in Firefox |
+| `./mvnw -B -ntp -Papi test` | Run live Reqres scenarios |
+| `./mvnw -B -ntp -Pmobile test` | Run seven normal Android scenarios |
+| `./mvnw -B -ntp -Pcrash-demo test` | Run the two deliberate crash scenarios |
+| `./mvnw -B -ntp allure:report` | Build the Allure report |
+| `./mvnw allure:serve` | Open Allure locally |
 
-PicoContainer scopes state per scenario. No static drivers, mutable global RestAssured configuration, shared response ordering, blanket retries or fixed sleeps are used. Suites are sequential: a single Android device cannot run concurrent sessions, and Playwright objects must remain on their owning thread. Independent CI jobs provide browser-level isolation.
+The crash suite checks the home-screen expectation after each explicit app crash. Both scenarios fail that assertion and return a nonzero exit code. Their results are separate from the normal mobile suite.
 
-Assertions verify actual outcomes: accepted drop, exact selected subset, both rental groups, current date value, meaningful rendered size change, complete descending order, all three green RGB values, all mobile confirmation fields, response values, generated ID and JSON schema. The Controlgroup image specifies both configurations; Book Now is a UI demo without a booking backend, so no fictitious booking confirmation is asserted.
+Environment-specific installation and service scripts are documented in [environment notes](docs/environment-notes.md).
 
-## CI and submission
+## Reporting and execution results
 
-`automation.yml` runs local contracts and Chromium/Firefox web jobs on pushes and pull requests. `api-live.yml` runs on demand, with an optional Reqres secret. `mobile.yml` runs on demand using an API 28 emulator; its input selects normal mobile or the deliberately failing crash demo. CI captures reports and evidence even after failures. CI definitions are not evidence that GitHub Actions executed successfully; check actual run results before submission.
+Reports are written to:
 
-Review [assessment analysis](docs/assessment-analysis.md), [manual strategy](docs/manual-test-strategy.md) and [interview guide](docs/interview-guide.md). The manual assignment requires **three real reproduced defects with screenshots**, not generic test cases or guessed bugs. No purchases or financial transactions are permitted.
+- `target/cucumber.html` and `target/cucumber.json`
+- `target/surefire-reports/`
+- `target/allure-results/`
+- `target/site/allure-maven-plugin/`
 
-## Deliverable review
+Screenshots are captured after web and mobile scenarios. Failed web scenarios also capture Playwright traces in `target/evidence/`; the Playwright CLI command `show-trace <file.zip>` opens a trace.
 
-Open [the manual workbook](manual/SDD_Manual_Testing_Assessment.xlsx) with its [evidence folder](manual/README.md). Read [execution results](docs/execution-record.md), [requirement coverage](docs/coverage.md), [critical review and design defence](docs/review.md), and [likely interview questions](docs/interview-guide.md) before submission. The repository contains Java automation; Python was used only for document/APK analysis and producing supporting manual artifacts, not as the test framework language.
+Profiles reuse Cucumber and Surefire filenames, so archive output after each suite. Allure retains earlier results until `clean`; cleaning also deletes local evidence under `target/`.
 
-In the prepared cloud snapshot, source `/workspace/tools/cloud-env.sh`; run `/workspace/tools/install-sdd.sh` to refresh and validate dependencies. `/workspace/tools/start-sdd-services.sh` starts retained Android tooling and checks readiness; use `-Dmobile.serverUrl=http://127.0.0.1:4725` there. These cloud helpers are environment-specific and do not replace the portable commands above. Saved environment drafts require review/save and publication before they become a reusable published snapshot.
+Recorded validation on 7 October 2026: four local contracts, seven Chromium scenarios and two live API scenarios passed. Six distinct normal Android scenarios passed; **MOB-03 remains unresolved at the WebView reset link**. The two deliberate crash cases failed as expected. Latest distinct Allure outcomes are **19 passed, 2 deliberate failures and 1 broken/unresolved** across 22 tests/scenarios, including targeted reruns. Full run details are in the [execution record](docs/execution-record.md).
+
+## CI
+
+- `automation.yml`: local contracts and a Chromium/Firefox matrix on pushes and pull requests.
+- `api-live.yml`: manually triggered live API checks with optional `REQRES_API_KEY` secret.
+- `mobile.yml`: manually triggered API 28 emulator job with `mobile` or `crash-demo` selection.
+
+Workflows retain reports and evidence after failures. GitHub Actions execution has not been verified in the recorded results. Firefox could not be validated on the restricted cloud host.
+
+## Manual testing deliverables
+
+The [Excel workbook](manual/SDD_Manual_Testing_Assessment.xlsx) contains three reproduced Spartoo findings, the required defect fields, risk-based coverage and execution status. Screenshots and browser observations are in `manual/evidence/`.
+
+Testing used Chromium at a 390×844 responsive viewport on Debian Linux, with a separate desktop search control. Findings cover unmatched-search feedback, focus escaping the consent overlay and a skip link that fails to bypass the header. Each was reproduced in two fresh browser contexts. Purchases, payments and account creation were excluded. Details and evidence links are in the [manual testing notes](manual/README.md).
+
+## Project documentation
+
+- [Requirement coverage](docs/coverage.md)
+- [Test execution results](docs/execution-record.md)
+- [Framework notes and design decisions](docs/framework-notes.md)
+- [Manual testing scope](docs/manual-test-strategy.md)
+- [Manual workbook and evidence](manual/README.md)
+- [Environment notes](docs/environment-notes.md)
+
+## Known limitations
+
+MOB-03 verifies the submitted name and Mercedes selection, but its reset link is clipped to a one-pixel rectangle on the tested emulator. The reset assertion remains enabled. The legacy APK does not expose a debuggable WebView, so tests use native accessibility controls. Further device compatibility testing is required.
+
+Public demo sites can change or rate-limit requests. Book Now is a jQuery UI demo control without a booking backend; coverage checks selection state. Manual findings describe observed browser behavior and do not constitute a full screen-reader or legal compliance audit.
