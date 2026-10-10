@@ -1,12 +1,12 @@
 # Requirement coverage
 
-Feature tags are stable assessment IDs. All scenarios are implemented in Java. Execution status is recorded in [the execution record](execution-record.md); MOB-03 remains unresolved, and MOB-08/MOB-09 are deliberate failures.
+Feature tags are stable assessment IDs. All scenarios are implemented in Java. Execution status is recorded in [the execution record](execution-record.md); MOB-03 passed three fresh-session validation runs; MOB-08/MOB-09 are deliberate failures.
 
 | Assessment ID | Required behavior | Assertions / evidence |
 |---|---|---|
 | MOB-01 | Launch, title, home elements | Exact configured title, home activity, eleven enabled controls, EN text |
 | MOB-02 | EN → No, no → home | Dialog dismissal plus complete home checks |
-| MOB-03 | Hello WebView, Mercedes, submit, here → Volvo | Title/activity, question, exact name/car result, reset question and default Volvo |
+| MOB-03 | Hello WebView, Mercedes, submit, here → Volvo | Title/activity, question, exact name/car result, reset question, default name and Volvo; DOM link interaction with native context restored |
 | MOB-04 | Registration/defaults/details → home | Mr. Burns/Ruby defaults, field controls, all six submitted confirmation values, home |
 | MOB-05 | Progress → registration | Loader appears and disappears, registration defaults/controls |
 | MOB-06 | Toast | Exact message via notification-aware native XPath polling |
@@ -27,4 +27,4 @@ The four extra local API contract checks exercise the actual client against a lo
 
 Manual deliverables cover three reproduced Spartoo findings with all ten requested report fields, screenshots, clean-session evidence, exploratory scope and risk-based coverage. The workbook distinguishes observed checks from unexecuted cases. Execution used a responsive browser viewport.
 
-CI supplies a Chromium/Firefox matrix and separately triggered API/mobile/crash suites. Broader browser/device coverage, screen-reader certification, production performance/security testing and transactional flows were not executed; those require separate scope and suitable environments.
+CI supplies a Chromium/Firefox matrix and separately triggered API/mobile/crash suites. Browsers beyond Chromium/Firefox, broader devices, screen-reader certification, production performance/security testing and transactional flows were not executed; those require separate scope and suitable environments.

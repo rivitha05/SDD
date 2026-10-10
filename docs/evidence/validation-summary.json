@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-07",
+  "source_commit": "0975c9b30ce426bfc7cd60d898191dfd17911f8f",
+  "normal_regression": {
+    "local_contracts": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "live_api": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "chromium": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "firefox": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "android": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "total_passed": 27
+  },
+  "mob03_stability": {
+    "fresh_session_runs": 3,
+    "passed": 3,
+    "additional_full_suite_pass": true
+  },
+  "crash_demo": {
+    "expected_failures": 2,
+    "unexpected_failures": 0,
+    "exit_code": 1
+  },
+  "allure_latest_logical_cases": {
+    "failed": 2,
+    "broken": 0,
+    "skipped": 0,
+    "passed": 20,
+    "unknown": 0,
+    "total": 22
+  },
+  "github_regression": {
+    "run_id": "37674374429",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "contract",
+        "conclusion": "success",
+        "url": "https://github.com/rivitha05/SDD/actions/runs/37674374429/job/112973955300"
+      },
+      {
+        "name": "web (chromium)",
+        "conclusion": "success",
+        "url": "https://github.com/rivitha05/SDD/actions/runs/37674374429/job/112973955151"
+      },
+      {
+        "name": "web (firefox)",
+        "conclusion": "success",
+        "url": "https://github.com/rivitha05/SDD/actions/runs/37674374429/job/112973954821"
+      }
+    ]
+  },
+  "ci_followup": {
+    "date": "2026-10-10",
+    "source_commit": "89f3b13b2d1ac55f1ac4d65f9a1a869779459db1",
+    "regression": {
+      "run_id": "38074526669",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "contract",
+          "job_id": "114278600522",
+          "conclusion": "success",
+          "duration": "26s"
+        },
+        {
+          "name": "web (chromium)",
+          "job_id": "114278600648",
+          "conclusion": "success",
+          "duration": "1m 17s"
+        },
+        {
+          "name": "web (firefox)",
+          "job_id": "114278600693",
+          "conclusion": "success",
+          "duration": "1m 11s"
+        }
+      ],
+      "artifacts": 3,
+      "workflow_duration": "1m 19s"
+    },
+    "android": {
+      "run_id": "38074526668",
+      "job_id": "114278600630",
+      "conclusion": "success",
+      "workflow_duration": "6m 10s",
+      "job_duration": "6m 7s",
+      "artifact": "android-mobile-results",
+      "artifact_size": "5.14 MB"
+    },
+    "previous_android": {
+      "run_id": "37674374488",
+      "conclusion": "cancelled",
+      "reason": "Job exceeded 35-minute execution limit"
+    },
+    "local_startup_diagnostic": {
+      "result": "aborted after session setup failure",
+      "error": "adb shell pm clear io.selendroid.testapp timed out after 120000ms",
+      "tests_completed": 0,
+      "runner_exit_code": 143,
+      "appium_cleanup_confirmed": true,
+      "action": "Rebooted the retained software emulator",
+      "reboot_resolved": false,
+      "fresh_avd_boot_seconds": 440,
+      "fresh_avd_result": "Appium Settings installation stalled before assertions; run stopped",
+      "host_permission_check": "package-clear command timed out after 15 seconds",
+      "local_emulator_status": "blocked during package operations; exact emulator cause undetermined",
+      "reset_followup_executed": false
+    }
+  }
+}

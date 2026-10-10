@@ -8,7 +8,7 @@ Page objects contain selectors and reusable page interactions. PicoContainer cre
 
 Default tests run four local HTTP contracts. Maven profiles select live suites. The API POST scenario performs a fresh GET, maps user 10's `first_name` to `name`, and uses configured job `BA`. The assessment's illustrative Bryant value is not used as a fixed name.
 
-Mobile executes sequentially on one device. Browser contexts are isolated, and CI browser jobs use separate workers to respect Playwright thread ownership.
+Mobile executes sequentially on one device. Browser contexts are isolated, and CI browser jobs use separate workers to respect Playwright thread ownership. For a configured Firefox trust store, each scenario receives a temporary profile containing only NSS trust databases. The profile is deleted after browser shutdown; cookies and browsing state are not copied.
 
 ```mermaid
 flowchart LR
@@ -26,17 +26,17 @@ flowchart LR
 
 Web coverage checks the exact selected subset, complete descending order, both pictured rental forms, current date, rendered size changes and all three green RGB values. Book Now has no booking backend; its checks cover UI state.
 
-Registration checks defaults and all six confirmation values. Native waits use explicit timeouts and zero implicit timeout. Toast polling initializes XPath before the trigger and temporarily disables Android idle waits. The WebView dropdown and popup use multi-window accessibility. Tests do not use blanket retries or fixed sleeps.
+Registration checks defaults and all six confirmation values. Native waits use explicit timeouts and zero implicit timeout. Toast polling initializes XPath before the trigger and temporarily disables Android idle waits. The popup uses multi-window accessibility; the Hello form uses WebView DOM controls. Tests do not use blanket retries or fixed sleeps.
 
 API assertions cover HTTP status, user identity, echoed values, nonblank ID, response schema and timestamp. Local negative checks reject missing source users, blank jobs and malformed response contracts.
 
 ## APK compatibility and crash cases
 
-The supplied APK has no WebView debugging support. The Hello form is exercised through native accessibility controls. Appium installs a disposable copy to preserve the original APK and checksum.
+The tested APK exposes a Chrome 69 WebView context on API 28. The Hello form uses DOM IDs/names, Selenium Select and the actual reset link. The page object waits for context availability and restores `NATIVE_APP` in `finally`. UiAutomator2 3.9.9 and ChromeDriver 2.44 are pinned for legacy protocol compatibility. Appium installs a disposable copy to preserve the original APK and checksum.
 
 The two deliberate crash cases retain the failing home-title assertion. A synchronous text-trigger crash can raise `StaleElementReferenceException` during `sendKeys`; the trigger catches that exception only when the app has left home. If home remains active, it rethrows the exception. Screenshots, native source and AndroidRuntime logs accompany the failure results.
 
-MOB-03 remains unresolved: submitted values pass, but the reset link is clipped on the tested emulator. Native scrolling and usable-bounds waits retain the original reset assertions. No forced navigation or XML-bounds workaround is used. Results and diagnostic conditions are in the [execution record](execution-record.md).
+Native accessibility retained stale WebView bounds after submission, although the reset link was visibly usable. DOM interaction avoids those coordinates. MOB-03 passed three fresh-session runs, including the reset URL, original name default and Volvo selection. No forced navigation or assertion bypass is used. Evidence is in the [execution record](execution-record.md).
 
 ## Scope
 

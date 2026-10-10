@@ -7,7 +7,7 @@ Java automation for the supplied Selendroid Android application, jQuery UI demos
 | Area | Tools |
 |---|---|
 | Language and build | Java 17+, Maven 3.9.11 wrapper |
-| Mobile | Appium Java Client 9.5.0, Appium 2.19.0, UiAutomator2 4.2.9 |
+| Mobile | Appium Java Client 9.5.0, Appium 2.19.0, UiAutomator2 3.9.9, ChromeDriver 2.44 |
 | Web | Playwright Java 1.55.0 |
 | API | REST Assured 5.5.6, JSON schema validation |
 | Test execution | TestNG 7.11.0, Cucumber 7.27.2, PicoContainer |
@@ -84,11 +84,14 @@ adb shell getprop sys.boot_completed
 adb shell wm size reset
 adb shell wm density 160
 npm install --global appium@2.19.0
-appium driver install uiautomator2@4.2.9
+appium driver install uiautomator2@3.9.9
+./scripts/install-chromedriver.sh
 appium --address 127.0.0.1
 ```
 
 The boot property should be `1` and Appium's `/status` endpoint should respond before starting tests. Validation used the emulator's physical resolution at 160 dpi.
+
+ChromeDriver 2.44 matches the Chrome 69 WebView in the API 28 image. The installer verifies the Linux x86_64 download checksum and writes `.tools/chromedriver/chromedriver`. Other operating systems or WebView versions require a matching driver configured through `mobile.chromedriverExecutable`. Existing UiAutomator2 4.x installations should be replaced with the pinned 3.9.9 driver; its ChromeDriver adapter supports the legacy protocol.
 
 The supplied APK is version `0.12.0-SNAPSHOT`, package `io.selendroid.testapp`, with launcher `io.selendroid.testapp.HomeScreenActivity`. Appium installs a runtime copy because installation may re-sign the APK. The original binary is retained unchanged.
 
@@ -106,12 +109,16 @@ Defaults are in `src/test/resources/config/default.properties`. Priority is JVM 
 
 Reqres accepts an optional `REQRES_API_KEY`, sent as `x-api-key`. Live validation did not require a key on the execution date. The POST name comes from user 10's GET `first_name` (Byron); the configured job is `BA`.
 
+Firefox can use an optional `web.firefoxTrustStore` directory containing an NSS `cert9.db` and supporting `key4.db`/`pkcs11.txt` files. Only trust databases are copied into a new temporary profile for each scenario; browsing state is not shared. This is useful when a proxy CA is required. [Environment notes](docs/environment-notes.md) include the setup.
+
 Public HTTPS requests and browser traffic support `HTTPS_PROXY`. Proxy certificates must be trusted by Java and the browser; TLS verification remains enabled. Credentials are supplied through environment variables or CI secrets and are excluded from request logging.
 
 ## Running tests and available commands
 
 | Command | Purpose |
 |---|---|
+| `./scripts/install-chromedriver.sh` | Install the pinned Linux x86_64 WebView driver |
+| `./scripts/run-mobile-ci.sh mobile` | Run Android tests on an already booted emulator with an owned Appium server |
 | `./mvnw -B -ntp clean test` | Compile and run local API contracts |
 | `./mvnw -B -ntp -Pweb test` | Run web scenarios in Chromium |
 | `./mvnw -B -ntp -Pweb test -Dweb.browser=firefox` | Run web scenarios in Firefox |
@@ -138,15 +145,15 @@ Screenshots are captured after web and mobile scenarios. Failed web scenarios al
 
 Profiles reuse Cucumber and Surefire filenames, so archive output after each suite. Allure retains earlier results until `clean`; cleaning also deletes local evidence under `target/`.
 
-Recorded validation on 7 October 2026: four local contracts, seven Chromium scenarios and two live API scenarios passed. Six distinct normal Android scenarios passed; **MOB-03 remains unresolved at the WebView reset link**. The two deliberate crash cases failed as expected. Latest distinct Allure outcomes are **19 passed, 2 deliberate failures and 1 broken/unresolved** across 22 tests/scenarios, including targeted reruns. Full run details are in the [execution record](docs/execution-record.md).
+Validation on 7 October 2026 passed four local contracts, two live API scenarios, seven Chromium scenarios, seven Firefox scenarios and all seven normal Android scenarios: **27 regression checks passed**. MOB-03 also passed three consecutive fresh-session runs before the full Android run. The separate crash suite produced its two expected failures. Full details and CI links are in the [execution record](docs/execution-record.md).
 
 ## CI
 
 - `automation.yml`: local contracts and a Chromium/Firefox matrix on pushes and pull requests.
 - `api-live.yml`: manually triggered live API checks with optional `REQRES_API_KEY` secret.
-- `mobile.yml`: manually triggered API 28 emulator job with `mobile` or `crash-demo` selection.
+- `mobile.yml`: API 28 emulator job on mobile-related pushes to `main`, plus manual `mobile` or `crash-demo` selection.
 
-Workflows retain reports and evidence after failures. GitHub Actions execution has not been verified in the recorded results. Firefox could not be validated on the restricted cloud host.
+Workflows retain reports and evidence after failures. [Automation regression run 38074526669](https://github.com/rivitha05/SDD/actions/runs/38074526669) passed its contract, Chromium and Firefox jobs on 10 October 2026. [Android run 38074526668](https://github.com/rivitha05/SDD/actions/runs/38074526668) also passed on the same date. Current validation details are in the [execution record](docs/execution-record.md).
 
 ## Manual testing deliverables
 
@@ -165,6 +172,6 @@ Testing used Chromium at a 390×844 responsive viewport on Debian Linux, with a 
 
 ## Known limitations
 
-MOB-03 verifies the submitted name and Mercedes selection, but its reset link is clipped to a one-pixel rectangle on the tested emulator. The reset assertion remains enabled. The legacy APK does not expose a debuggable WebView, so tests use native accessibility controls. Further device compatibility testing is required.
+Android validation uses API 28 with a Chrome 69 WebView. MOB-03 uses Appium’s WebView context because native accessibility bounds become stale after the page changes height. Other device/WebView versions require compatible tooling.
 
 Public demo sites can change or rate-limit requests. Book Now is a jQuery UI demo control without a booking backend; coverage checks selection state. Manual findings describe observed browser behavior and do not constitute a full screen-reader or legal compliance audit.
