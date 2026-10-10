@@ -8,6 +8,7 @@ on:
       - 'src/test/resources/features/mobile.feature'
       - 'src/test/resources/config/default.properties'
       - 'scripts/install-chromedriver.sh'
+      - 'scripts/run-mobile-ci.sh'
       - 'pom.xml'
       - '.github/workflows/mobile.yml'
   workflow_dispatch:
@@ -51,17 +52,8 @@ jobs:
           arch: x86_64
           profile: pixel
           disable-animations: true
-          script: |
-            sdkmanager "build-tools;35.0.0"
-            adb shell wm size reset
-            adb shell wm density 160
-            appium --address 127.0.0.1 --log target-appium.log &
-            for attempt in $(seq 1 30); do
-              if curl --fail --silent http://127.0.0.1:4723/status > /dev/null; then break; fi
-              sleep 1
-            done
-            curl --fail --silent http://127.0.0.1:4723/status > /dev/null
-            ./mvnw -B -ntp -P${{ inputs.suite || 'mobile' }} test
+          emulator-boot-timeout: 300
+          script: ./scripts/run-mobile-ci.sh "${{ inputs.suite || 'mobile' }}"
       - name: Generate Allure report
         if: always()
         run: ./mvnw -B -ntp allure:report
@@ -72,4 +64,5 @@ jobs:
           path: |
             target/
             target-appium.log
+            target-appium-console.log
           retention-days: 14
