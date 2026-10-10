@@ -174,4 +174,6 @@ Testing used Chromium at a 390×844 responsive viewport on Debian Linux, with a 
 
 Android validation uses API 28 with a Chrome 69 WebView. MOB-03 uses Appium’s WebView context because native accessibility bounds become stale after the page changes height. Other device/WebView versions require compatible tooling.
 
+The 10 October local software-emulator follow-up stalled during Android package operations before test assertions. The normal Android workflow passed on GitHub’s KVM-backed runner. The [execution record](docs/execution-record.md) preserves both outcomes.
+
 Public demo sites can change or rate-limit requests. Book Now is a jQuery UI demo control without a booking backend; coverage checks selection state. Manual findings describe observed browser behavior and do not constitute a full screen-reader or legal compliance audit.
