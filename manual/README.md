@@ -1,15 +1,17 @@
-# Manual assessment evidence
+# Manual testing
 
-Application: Spartoo, https://www.spartoo.com/, responsive website viewed in a desktop Chromium 140.0.7339.16 browser at 390×844 CSS pixels. Host: Debian Linux x86_64. A separate 1440×1000 desktop session was used for a search positive control.
+Application: [Spartoo](https://www.spartoo.com/), tested in Chromium 140.0.7339.16 on Debian Linux x86_64. The responsive viewport was 390×844; search was also checked at 1440×1000.
 
-Three observations were reproduced in two independent fresh browser contexts on 7 October 2026. Raw timestamps use UTC; the workbook displays Asia/Dubai dates. Evidence contains unaltered screenshots and recorded browser observations. No purchases, payments, account creation or financial transactions were performed.
+The Excel workbook contains three findings, each reproduced in two separate browser sessions:
 
-1. An unmatched search (`zzzzsddnonexistent987`) returns a catalogue of 243,275 articles with no no-results or explicit fallback explanation. A valid `Adidas` control navigates to the Adidas catalogue; the unmatched query retains its field value but returns the general `Recherche` catalogue. See BUG-01 query/result screenshots, text observation and control JSON. Result counts can change over time.
-2. While the cookie-consent overlay remains visible, Tab leaves its controls and reaches background header navigation. The fifth Tab focuses the customer-service phone link behind the overlay. See BUG-02 screenshot and the recorded focus sequence. Rejecting consent does work after its successful asynchronous request; that timing observation was investigated and rejected as a defect.
-3. The "Aller au contenu principal" skip link targets two hidden, duplicate `skip-link-anchor` elements. Activating it does not scroll or bypass the header; the next Tab returns to a header link. See BUG-03 screenshot and recorded target/focus state.
+1. **Unmatched search:** `zzzzsddnonexistent987` returned the general catalogue of 243,275 articles without a no-results message or fallback explanation. `Adidas` opened the Adidas catalogue. The unmatched query stayed in the search field, but the results page was labelled `Recherche`. Product counts may change.
+2. **Consent overlay focus:** Tab moved out of the visible cookie overlay into the header. The fifth Tab focused the customer-service phone link behind it.
+3. **Skip link:** `Aller au contenu principal` targeted two hidden elements with the same `skip-link-anchor` ID. Activating it did not bypass the header; the next Tab returned to a header link.
 
-Expected behavior for keyboard access is grounded in the skip link's stated purpose and WAI-ARIA modal interaction guidance (with WCAG keyboard/bypass-block expectations), with no separate Spartoo functional specification available. Search behavior is a usability finding: if fallback to all products is intentional, the UI should explain it instead of presenting it as matching results. These are observed functional/accessibility findings; full legal compliance and assistive-technology certification were outside scope.
+The search finding is a usability issue: returning the full catalogue may be intended, but the page does not explain the fallback. The keyboard checks use the skip link's purpose and WAI-ARIA modal guidance as the expected behavior.
 
-`evidence/observations.json` records both clean-session runs. `BUG-01-control.json` records the positive/negative desktop comparison. Blocked analytics requests and an early misconfigured font rendering environment were excluded from defect reports. Required content/image resource hosts were allowed before reproduction.
+Consent rejection worked after its request completed and is not included as a defect. Blocked analytics and an initial font-rendering problem were excluded too.
 
-The workbook includes the required fields, risk-based coverage, execution distinctions and evidence links/embedded previews. The workbook uses relative links to the accompanying `evidence/` directory.
+Screenshots and logs are in `evidence/`. `observations.json` contains both repeat checks, and `BUG-01-control.json` contains the desktop search comparison. The workbook has embedded screenshots and relative links to this folder, so keep it alongside the workbook.
+
+Purchases, payments, account creation and native mobile apps were not tested. Keyboard checks do not include a full screen-reader assessment.

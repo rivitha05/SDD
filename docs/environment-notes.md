@@ -1,10 +1,10 @@
-# Validation environment
+# Local setup notes
 
-Recorded runs used Debian Linux x86_64, a full JDK 21 compiling Java 17 bytecode, Maven 3.9.11, Chromium 140.0.7339.16, Firefox 141.0 and an Android API 28 emulator with Chrome 69 WebView. The host has no `/dev/kvm`; local Android runs used software emulation. Appium 2.19.0, UiAutomator2 3.9.9 and ChromeDriver 2.44 were validated together.
+The local runs used Debian Linux x86_64, JDK 21 compiling Java 17, Maven 3.9.11, Chromium 140.0.7339.16 and Firefox 141.0. Android used API 28 with Chrome 69, Appium 2.19.0, UiAutomator2 3.9.9 and ChromeDriver 2.44.
 
-## Prepared environment scripts
+## Local helpers
 
-The validation environment contains these helpers outside the Git checkout:
+The test machine has these helpers outside the repository:
 
 ```bash
 source /workspace/tools/cloud-env.sh
@@ -13,19 +13,26 @@ source /workspace/tools/cloud-env.sh
 sdd_mvn -B -ntp -Pmobile test -Dmobile.serverUrl=http://127.0.0.1:4726
 ```
 
-`install-sdd.sh` refreshes and validates dependencies. `start-sdd-services.sh` starts the retained emulator and Appium and checks readiness. The prepared environment uses Appium port 4726; portable setup defaults to 4723. Older diagnostic servers used port 4725. These helpers are specific to the prepared environment and are not included in a fresh repository clone.
+`install-sdd.sh` checks tools and refreshes dependencies. `start-sdd-services.sh` starts the emulator and Appium, then checks readiness. These files are specific to this machine; a fresh clone uses the [README setup commands](../README.md).
 
-The 10 October follow-up encountered package-clear timeouts on the retained AVD and an Appium Settings installation stall on a separate fresh AVD. Reboot and host permissions did not resolve them. Hosted Android CI passed on the same framework version; current local mobile setup remains blocked. Detailed results are in the [execution record](execution-record.md).
+Local Appium uses port 4726. The default is 4723, and earlier troubleshooting used 4725. SDK and tool files remain on disk, but emulator and Appium processes need restarting between sessions. ADB needs a writable `.android` directory.
 
-SDK, AVD and tool caches are retained locally; emulator and Appium processes restart between environment sessions. ADB uses its standard `.android` directory, which must be writable. The repository's `scripts/install-chromedriver.sh` installs and verifies the matching Linux WebView driver. `scripts/run-mobile-ci.sh` runs against an already booted emulator, starts its own Appium server and stops that server after Maven exits. It requires `sdkmanager`, `adb` and `appium` on `PATH`; `MOBILE_SERVER_PORT` selects an unused port.
+The repository includes two scripts:
 
-## Browser trust and sandbox permissions
+- `scripts/install-chromedriver.sh` downloads ChromeDriver 2.44 and checks its SHA-256.
+- `scripts/run-mobile-ci.sh` runs on a booted emulator, starts Appium and stops it after Maven exits. It needs `sdkmanager`, `adb` and `appium` on `PATH`. `MOBILE_SERVER_PORT` sets the port.
 
-Validation used the environment's HTTPS proxy, supported Maven proxy settings and Java/browser certificate trust. TLS verification remained enabled. An isolated fontconfig using installed DejaVu/Liberation fonts corrected the initial invisible-text rendering issue.
+## Android status
 
-Firefox cannot start inside the restricted command sandbox (`writing /proc/self/uid_map: EROFS` and graphics initialization failure). Both browser suites passed with host execution permissions. Firefox additionally required a separate NSS trust store for the proxy CA; without it, navigation failed with `SEC_ERROR_UNKNOWN_ISSUER`. Chromium uses the host's existing trust configuration.
+This machine has no `/dev/kvm`, so local Android uses software emulation. The full suite passed in an earlier run. During the latest local retry, package clear timed out and Appium Settings installation stalled, including on a fresh AVD. Reboot and host permissions did not resolve the issue. Android CI passed with KVM. The [test results](execution-record.md) contain the errors and run links.
 
-An example Linux setup for a certificate-only Firefox trust store:
+## Browser certificates and permissions
+
+Firefox could not start in the restricted sandbox (`writing /proc/self/uid_map: EROFS`). Both browsers passed with host execution permissions. Firefox also needed the proxy CA in a separate NSS certificate store to resolve `SEC_ERROR_UNKNOWN_ISSUER`. Chromium used the host's certificate configuration.
+
+The local setup uses Maven proxy settings and Java/browser certificate trust. TLS verification stays enabled. DejaVu/Liberation fonts and a separate fontconfig fixed an earlier text-rendering issue.
+
+Example Firefox certificate setup on Linux:
 
 ```bash
 mkdir -p /path/to/firefox-trust
@@ -34,6 +41,6 @@ certutil -A -d sql:/path/to/firefox-trust -n environment-proxy -t 'C,,' -i /path
 ./mvnw -B -ntp -Pweb test -Dweb.browser=firefox -Dweb.firefoxTrustStore=/path/to/firefox-trust
 ```
 
-`certutil` is provided by the OS NSS tools package. Only approved CA certificates belong in this directory. Each scenario copies the trust databases into a new temporary profile and deletes it after browser shutdown. Cookies and browsing state are not shared. The prepared environment supplies `WEB_FIREFOX_TRUST_STORE=/workspace/tools/firefox-trust`.
+`certutil` comes from the OS NSS tools package. Use the CA certificate supplied for the proxy. Each scenario copies the certificate databases into a new profile and deletes it when finished. The local environment sets `WEB_FIREFOX_TRUST_STORE=/workspace/tools/firefox-trust`.
 
-GitHub-hosted browser jobs passed with normal Playwright contexts and public certificate trust; the optional proxy trust configuration is not required there. Portable prerequisites and commands are in the [README](../README.md).
+The CI browser jobs passed without this custom certificate store.

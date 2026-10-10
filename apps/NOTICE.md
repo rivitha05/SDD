@@ -1,7 +1,13 @@
 # Supplied test application
 
-`selendroid-test-app.apk` is the binary supplied with this assessment, version `0.12.0-SNAPSHOT`, package `io.selendroid.testapp`, launcher `io.selendroid.testapp.HomeScreenActivity`. Its SHA-256 is recorded alongside it. This repository does not claim authorship of Selendroid.
+`selendroid-test-app.apk` was supplied with the assessment:
 
-Upstream project: https://github.com/selendroid/selendroid. Upstream Selendroid sources carry the Apache License 2.0 and attribution to the eBay Software Foundation and Selendroid committers. The inspected upstream source was a locator/reference aid; the supplied APK resources are the authority for this assessment. Appium receives a runtime copy so the supplied binary remains unchanged.
+- Version: `0.12.0-SNAPSHOT`
+- Package: `io.selendroid.testapp`
+- Launcher: `io.selendroid.testapp.HomeScreenActivity`
+
+The SHA-256 file is stored beside the APK. Appium installs a runtime copy to keep the supplied binary unchanged.
+
+The upstream [Selendroid project](https://github.com/selendroid/selendroid) uses Apache License 2.0 and credits the eBay Software Foundation and Selendroid committers. The APK is a third-party application.
 
 Maven wrapper scripts retain their original Apache Maven license notices.

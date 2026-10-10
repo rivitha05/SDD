@@ -1,45 +1,45 @@
 # Framework notes
 
-## Suite boundaries and lifecycle
+## Structure
 
-One Java Maven project contains separate mobile, web and API packages. Appium handles Android, Playwright Java handles browser interactions, and REST Assured handles HTTP requests. TestNG executes Cucumber scenarios; Allure records results and attachments.
+The project has separate mobile, web and API packages in one Maven build. Appium drives Android, Playwright Java drives the browser, and REST Assured calls the API. TestNG runs the Cucumber scenarios, with results and attachments in Allure.
 
-Page objects contain selectors and reusable page interactions. PicoContainer creates a separate World for each scenario. Lifecycle hooks release resources even when evidence capture fails. Drivers and responses are not shared through mutable global state.
+Page objects hold selectors and reusable interactions. PicoContainer creates a new `World` for each scenario. Hooks start and close sessions and capture screenshots. Drivers and API responses belong to the scenario that created them.
 
-Default tests run four local HTTP contracts. Maven profiles select live suites. The API POST scenario performs a fresh GET, maps user 10's `first_name` to `name`, and uses configured job `BA`. The assessment's illustrative Bryant value is not used as a fixed name.
+The default Maven command runs four local API contract tests. Profiles select the web, live API, normal mobile or crash suite.
 
-Mobile executes sequentially on one device. Browser contexts are isolated, and CI browser jobs use separate workers to respect Playwright thread ownership. For a configured Firefox trust store, each scenario receives a temporary profile containing only NSS trust databases. The profile is deleted after browser shutdown; cookies and browsing state are not copied.
+Mobile tests run sequentially on one device. Web scenarios use separate browser contexts; CI runs each browser in its own job. When Firefox needs a custom CA, each scenario gets a temporary profile with the certificate databases, which is deleted after shutdown.
 
 ```mermaid
 flowchart LR
-  Maven[Maven profile / CI job] --> Runner[TestNG Cucumber runner]
-  Runner --> World[Scenario-scoped World and hooks]
+  Maven[Maven profile] --> Runner[TestNG / Cucumber]
+  Runner --> World[Scenario World and hooks]
   World --> Mobile[Appium page objects]
-  World --> Web[Playwright Java page object]
-  Runner --> API[REST Assured instance client]
-  Mobile --> Evidence[Allure and diagnostic attachments]
-  Web --> Evidence
-  API --> Evidence
+  World --> Web[Playwright page object]
+  Runner --> API[REST Assured client]
+  Mobile --> Reports[Allure attachments]
+  Web --> Reports
+  API --> Reports
 ```
 
-## Assertions and synchronization
+## Test checks and waits
 
-Web coverage checks the exact selected subset, complete descending order, both pictured rental forms, current date, rendered size changes and all three green RGB values. Book Now has no booking backend; its checks cover UI state.
+Web tests check the selected items, complete descending sort order, both rental forms, today's date, resized dimensions and all three green backgrounds. Book Now is a demo control, so the test checks the selected form values rather than a booking transaction.
 
-Registration checks defaults and all six confirmation values. Native waits use explicit timeouts and zero implicit timeout. Toast polling initializes XPath before the trigger and temporarily disables Android idle waits. The popup uses multi-window accessibility; the Hello form uses WebView DOM controls. Tests do not use blanket retries or fixed sleeps.
+Android uses explicit waits with zero implicit timeout. Registration checks the defaults and all six confirmation values. Toast checks use short XPath polling with Android idle waits temporarily disabled. Popup checks use multi-window accessibility.
 
-API assertions cover HTTP status, user identity, echoed values, nonblank ID, response schema and timestamp. Local negative checks reject missing source users, blank jobs and malformed response contracts.
+The API POST test first fetches user 10 and uses the returned `first_name` as its name, with job `BA`. API checks cover status, returned values, ID, schema and timestamp. Local contract tests also cover a missing source user, blank job and malformed response.
 
-## APK compatibility and crash cases
+## WebView compatibility
 
-The tested APK exposes a Chrome 69 WebView context on API 28. The Hello form uses DOM IDs/names, Selenium Select and the actual reset link. The page object waits for context availability and restores `NATIVE_APP` in `finally`. UiAutomator2 3.9.9 and ChromeDriver 2.44 are pinned for legacy protocol compatibility. Appium installs a disposable copy to preserve the original APK and checksum.
+The API 28 image uses Chrome 69. UiAutomator2 3.9.9 and ChromeDriver 2.44 support that WebView's protocol.
 
-The two deliberate crash cases retain the failing home-title assertion. A synchronous text-trigger crash can raise `StaleElementReferenceException` during `sendKeys`; the trigger catches that exception only when the app has left home. If home remains active, it rethrows the exception. Screenshots, native source and AndroidRuntime logs accompany the failure results.
+MOB-03 uses DOM IDs/names and Selenium Select because Android reports stale bounds after the result page changes height. It checks the reset URL, default name and Volvo selection, then restores `NATIVE_APP` in `finally`. Appium installs a copy of the supplied APK to keep the original file unchanged.
 
-Native accessibility retained stale WebView bounds after submission, although the reset link was visibly usable. DOM interaction avoids those coordinates. MOB-03 passed three fresh-session runs, including the reset URL, original name default and Volvo selection. No forced navigation or assertion bypass is used. Evidence is in the [execution record](execution-record.md).
+## Crash tests
 
-## Scope
+MOB-08 and MOB-09 trigger the app's two deliberate crashes. The home-title check then fails, and the suite returns a nonzero exit code.
 
-The assessment covers nine Android scenarios, seven web scenarios and two live API scenarios. The [coverage matrix](coverage.md) maps each requirement to its checks. The four local contracts supplement live API coverage.
+Typing into the crash field can raise `StaleElementReferenceException` as the app exits. The trigger accepts this only if the app has left home; otherwise it rethrows the exception. Failure reports include screenshots, page source and AndroidRuntime logs.
 
-Manual testing uses the permitted Spartoo responsive website and records three reproduced findings in Excel. Native Android/iOS manual testing, transactional flows, production performance/security testing and a full assistive-technology audit are outside this execution scope.
+The [coverage table](coverage.md) lists the checks for each scenario. Results are in [test results](execution-record.md).
