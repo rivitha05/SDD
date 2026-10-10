@@ -45,12 +45,6 @@ The next Android run passed and uploaded `android-mobile-results`. The regressio
 
 The live API suite passed locally. The separate `api-live.yml` workflow was not run.
 
-## Local emulator issue
-
-The latest local retry failed during session setup: `adb shell pm clear io.selendroid.testapp` timed out after 120000 ms. Reboot did not resolve it. A fresh API 28 emulator booted in 7m 20s, but Appium Settings installation also stalled. Package clear still timed out with host permissions.
-
-These retries were stopped before test assertions. Their logs are separate from the earlier passing run. The cause of the local package-operation stalls is still unknown; Android CI passed on a runner with KVM.
-
 ## Reports
 
 Each suite's Cucumber and Surefire output was saved separately because the profiles write to the same filenames. Allure also contains earlier troubleshooting runs.

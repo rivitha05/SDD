@@ -110,20 +110,6 @@
       "run_id": "37674374488",
       "conclusion": "cancelled",
       "reason": "Job exceeded 35-minute execution limit"
-    },
-    "local_startup_diagnostic": {
-      "result": "aborted after session setup failure",
-      "error": "adb shell pm clear io.selendroid.testapp timed out after 120000ms",
-      "tests_completed": 0,
-      "runner_exit_code": 143,
-      "appium_cleanup_confirmed": true,
-      "action": "Rebooted the retained software emulator",
-      "reboot_resolved": false,
-      "fresh_avd_boot_seconds": 440,
-      "fresh_avd_result": "Appium Settings installation stalled before assertions; run stopped",
-      "host_permission_check": "package-clear command timed out after 15 seconds",
-      "local_emulator_status": "blocked during package operations; exact emulator cause undetermined",
-      "reset_followup_executed": false
     }
   }
 }

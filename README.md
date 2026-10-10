@@ -174,6 +174,4 @@ Testing used Chromium at 390×844 on Debian Linux, with a desktop search check a
 
 Android was tested on API 28 with Chrome 69 WebView. Other device or WebView versions may need a different ChromeDriver.
 
-The latest local emulator retry stalled during package setup. Android CI passed with KVM. The error and troubleshooting steps are in [test results](docs/execution-record.md).
-
 The demo sites can change or rate-limit requests. Book Now has no booking backend, so the test checks form selections. Manual testing covers the responsive website; purchases, payments, native apps and screen-reader testing were not included.

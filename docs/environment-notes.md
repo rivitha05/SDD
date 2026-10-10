@@ -22,10 +22,6 @@ The repository includes two scripts:
 - `scripts/install-chromedriver.sh` downloads ChromeDriver 2.44 and checks its SHA-256.
 - `scripts/run-mobile-ci.sh` runs on a booted emulator, starts Appium and stops it after Maven exits. It needs `sdkmanager`, `adb` and `appium` on `PATH`. `MOBILE_SERVER_PORT` sets the port.
 
-## Android status
-
-This machine has no `/dev/kvm`, so local Android uses software emulation. The full suite passed in an earlier run. During the latest local retry, package clear timed out and Appium Settings installation stalled, including on a fresh AVD. Reboot and host permissions did not resolve the issue. Android CI passed with KVM. The [test results](execution-record.md) contain the errors and run links.
-
 ## Browser certificates and permissions
 
 Firefox could not start in the restricted sandbox (`writing /proc/self/uid_map: EROFS`). Both browsers passed with host execution permissions. Firefox also needed the proxy CA in a separate NSS certificate store to resolve `SEC_ERROR_UNKNOWN_ISSUER`. Chromium used the host's certificate configuration.
